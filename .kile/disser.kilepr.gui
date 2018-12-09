@@ -2,7 +2,7 @@
 kile_livePreviewEnabled=true
 kile_livePreviewStatusUserSpecified=true
 kile_livePreviewTool=LivePreview-PDFLaTeX
-lastDocument=dissertation.tex
+lastDocument=common/packages.tex
 
 [document-settings,item:Dissertation/acronyms.tex]
 Bookmarks=
@@ -387,8 +387,8 @@ TextFolding=[]
 ViMarks=.,2,0,[,2,0,],2,0
 
 [view-settings,view=0,item:Dissertation/references.tex]
-CursorColumn=0
-CursorLine=8
+CursorColumn=46
+CursorLine=10
 JumpList=
 TextFolding=[]
 ViMarks=.,9,94,[,9,94,],9,94
@@ -458,7 +458,7 @@ ViMarks=
 
 [view-settings,view=0,item:common/packages.tex]
 CursorColumn=0
-CursorLine=0
+CursorLine=95
 JumpList=
 TextFolding=[]
 ViMarks=
@@ -478,8 +478,8 @@ TextFolding=[]
 ViMarks=
 
 [view-settings,view=0,item:dissertation.tex]
-CursorColumn=28
-CursorLine=57
+CursorColumn=9
+CursorLine=47
 JumpList=
 TextFolding=[]
 ViMarks=.,55,0,[,53,9,],-1,-1
