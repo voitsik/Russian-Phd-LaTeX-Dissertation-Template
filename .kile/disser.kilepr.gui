@@ -2,7 +2,7 @@
 kile_livePreviewEnabled=true
 kile_livePreviewStatusUserSpecified=true
 kile_livePreviewTool=LivePreview-PDFLaTeX
-lastDocument=Dissertation/part3.tex
+lastDocument=Dissertation/introduction.tex
 
 [document-settings,item:Dissertation/acronyms.tex]
 Bookmarks=
@@ -221,20 +221,20 @@ Mode=LaTeX
 Mode Set By User=false
 
 [item:Dissertation/acronyms.tex]
-open=true
-order=16
-
-[item:Dissertation/appendix.tex]
-open=true
+open=false
 order=15
 
+[item:Dissertation/appendix.tex]
+open=false
+order=14
+
 [item:Dissertation/conclusion.tex]
-open=true
-order=3
+open=false
+order=2
 
 [item:Dissertation/contents.tex]
-open=true
-order=14
+open=false
+order=13
 
 [item:Dissertation/dictionary.tex]
 open=false
@@ -245,12 +245,12 @@ open=false
 order=-1
 
 [item:Dissertation/disstyles.tex]
-open=true
-order=5
+open=false
+order=4
 
 [item:Dissertation/introduction.tex]
 open=true
-order=8
+order=5
 
 [item:Dissertation/lists.tex]
 open=false
@@ -258,31 +258,31 @@ order=-1
 
 [item:Dissertation/part1.tex]
 open=true
-order=9
+order=6
 
 [item:Dissertation/part2.tex]
 open=true
-order=17
+order=10
 
 [item:Dissertation/part3.tex]
 open=true
-order=18
+order=11
 
 [item:Dissertation/references.tex]
 open=true
-order=12
+order=8
 
 [item:Dissertation/setup.tex]
 open=false
 order=14
 
 [item:Dissertation/title.tex]
-open=true
+open=false
 order=1
 
 [item:Dissertation/userpackages.tex]
 open=true
-order=13
+order=9
 
 [item:Dissertation/userstyles.tex]
 open=false
@@ -290,15 +290,15 @@ order=4
 
 [item:common/characteristic.tex]
 open=true
-order=2
+order=1
 
 [item:common/concl.tex]
 open=true
-order=6
+order=3
 
 [item:common/data.tex]
 open=true
-order=4
+order=2
 
 [item:common/fonts.tex]
 open=false
@@ -306,19 +306,19 @@ order=-1
 
 [item:common/newnames.tex]
 open=true
-order=10
+order=7
 
 [item:common/packages.tex]
-open=true
-order=11
+open=false
+order=10
 
 [item:common/renames.tex]
 open=true
-order=19
+order=12
 
 [item:common/setup.tex]
 open=true
-order=7
+order=4
 
 [item:common/styles.tex]
 open=false
@@ -368,11 +368,11 @@ TextFolding=[]
 ViMarks=.,8,56,[,8,30,],8,56
 
 [view-settings,view=0,item:Dissertation/introduction.tex]
-CursorColumn=2
-CursorLine=16
+CursorColumn=0
+CursorLine=27
 JumpList=
 TextFolding=[]
-ViMarks=.,16,1,[,16,0,],16,1
+ViMarks=.,25,0,[,20,0,],-1,-1
 
 [view-settings,view=0,item:Dissertation/part1.tex]
 CursorColumn=0
@@ -396,11 +396,11 @@ TextFolding=[]
 ViMarks=.,4,61,[,4,61,],4,61
 
 [view-settings,view=0,item:Dissertation/references.tex]
-CursorColumn=10
+CursorColumn=0
 CursorLine=15
 JumpList=
 TextFolding=[]
-ViMarks=.,9,94,[,9,94,],9,94
+ViMarks=.,15,0,[,15,0,],15,0
 
 [view-settings,view=0,item:Dissertation/setup.tex]
 CursorColumn=24
@@ -431,11 +431,11 @@ TextFolding=[]
 ViMarks=
 
 [view-settings,view=0,item:common/characteristic.tex]
-CursorColumn=39
+CursorColumn=0
 CursorLine=100
 JumpList=
 TextFolding=[]
-ViMarks=.,100,38,[,100,0,],100,38
+ViMarks=.,93,1,[,93,1,],93,1
 
 [view-settings,view=0,item:common/concl.tex]
 CursorColumn=9
@@ -480,11 +480,11 @@ TextFolding=[]
 ViMarks=
 
 [view-settings,view=0,item:common/setup.tex]
-CursorColumn=26
-CursorLine=36
+CursorColumn=31
+CursorLine=37
 JumpList=
 TextFolding=[]
-ViMarks=.,36,25,[,36,25,],36,25
+ViMarks=.,37,30,[,37,30,],37,30
 
 [view-settings,view=0,item:common/styles.tex]
 CursorColumn=6
@@ -494,8 +494,8 @@ TextFolding=[]
 ViMarks=
 
 [view-settings,view=0,item:dissertation.tex]
-CursorColumn=9
-CursorLine=48
+CursorColumn=25
+CursorLine=53
 JumpList=
 TextFolding=[]
 ViMarks=.,53,0,[,53,0,],53,0

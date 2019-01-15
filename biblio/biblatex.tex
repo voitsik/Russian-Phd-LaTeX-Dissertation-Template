@@ -341,9 +341,14 @@ sorting=none,% настройка сортировки списка литера
 \printbibliography[heading=counter,env=counter,keyword=bibliofull,section=0]
 }
 
+% \DeclareRefcontext{ap}{labelprefix=A}
+
 \newcommand*{\insertbiblioauthorcited}{
+\begin{refcontext}[labelprefix=A]
 \printbibliography[heading=authorpublications,keyword=biblioauthor,section=0,title=\authorbibtitle]
+\end{refcontext}
 }
+
 \newcommand*{\insertbiblioauthor}{
 \printbibliography[heading=authorpublications,keyword=biblioauthor,section=1,title=\authorbibtitle]
 }
@@ -358,6 +363,8 @@ sorting=none,% настройка сортировки списка литера
 }
 
 \newcommand*{\insertbiblioother}{
-\printbibliography[heading=otherpublications,keyword=biblioother]
+\begin{refcontext}
+\printbibliography[resetnumbers,heading=otherpublications,keyword=biblioother]
+\end{refcontext}
 }
 
