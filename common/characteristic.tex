@@ -56,52 +56,53 @@
 %Х из которых изданы в журналах, рекомендованных ВАК~\cite{Sokolov,Gaidaenko}, 
 %ХХ --- в тезисах докладов~\cite{Lermontov,Management}.
 
-\ifnumequal{\value{bibliosel}}{0}{% Встроенная реализация с загрузкой файла через движок bibtex8
-    \publications\
-
-%     Основные результаты по теме диссертации изложены в XX печатных изданиях,
-%     X из которых изданы в журналах, рекомендованных ВАК,
-%     X "--- в тезисах докладов.%
-}{% Реализация пакетом biblatex через движок biber
-%Сделана отдельная секция, чтобы не отображались в списке цитированных материалов
-    \begin{refsection}[vak,papers,conf]% Подсчет и нумерация авторских работ. Засчитываются только те, которые были прописаны внутри \nocite{}.
-        %Чтобы сменить порядок разделов в сгрупированном списке литературы необходимо перетасовать следующие три строчки, а также команды в разделе \newcommand*{\insertbiblioauthorgrouped} в файле biblio/biblatex.tex
-        \printbibliography[heading=countauthorvak, env=countauthorvak, keyword=biblioauthorvak, section=1]%
-        \printbibliography[heading=countauthorconf, env=countauthorconf, keyword=biblioauthorconf, section=1]%
-        \printbibliography[heading=countauthornotvak, env=countauthornotvak, keyword=biblioauthornotvak, section=1]%
-        \printbibliography[heading=countauthor, env=countauthor, keyword=biblioauthor, section=1]%
-        \nocite{%Порядок перечисления в этом блоке определяет порядок вывода в списке публикаций автора
-                vakbib1,vakbib2,%
-                confbib1,confbib2,%
-                bib1,bib2,%
-        }%
-        \publications\ Основные результаты по теме диссертации изложены в~\arabic{citeauthor}~печатных изданиях, 
-        \arabic{citeauthorvak} из которых изданы в журналах, рекомендованных ВАК, 
-        \arabic{citeauthorconf} "--- в~тезисах докладов.
-    \end{refsection}
-    \begin{refsection}[vak,papers,conf]%Блок, позволяющий отобрать из всех работ автора наиболее значимые, и только их вывести в автореферате, но считать в блоке выше общее число работ
-        \printbibliography[heading=countauthorvak, env=countauthorvak, keyword=biblioauthorvak, section=2]%
-        \printbibliography[heading=countauthornotvak, env=countauthornotvak, keyword=biblioauthornotvak, section=2]%
-        \printbibliography[heading=countauthorconf, env=countauthorconf, keyword=biblioauthorconf, section=2]%
-        \printbibliography[heading=countauthor, env=countauthor, keyword=biblioauthor, section=2]%
-        \nocite{vakbib2}%vak
-        \nocite{bib1}%notvak
-        \nocite{confbib1}%conf
-    \end{refsection}
-}
+% \ifnumequal{\value{bibliosel}}{0}{% Встроенная реализация с загрузкой файла через движок bibtex8
+%     \publications\
+%
+% %     Основные результаты по теме диссертации изложены в XX печатных изданиях,
+% %     X из которых изданы в журналах, рекомендованных ВАК,
+% %     X "--- в тезисах докладов.%
+% }{% Реализация пакетом biblatex через движок biber
+% %Сделана отдельная секция, чтобы не отображались в списке цитированных материалов
+%     \begin{refsection}% Подсчет и нумерация авторских работ. Засчитываются только те, которые были прописаны внутри \nocite{}.
+%         %Чтобы сменить порядок разделов в сгрупированном списке литературы необходимо перетасовать следующие три строчки, а также команды в разделе \newcommand*{\insertbiblioauthorgrouped} в файле biblio/biblatex.tex
+%         \printbibliography[heading=countauthorvak, env=countauthorvak, keyword=biblioauthorvak, section=1]%
+% %         \printbibliography[heading=countauthorconf, env=countauthorconf, keyword=biblioauthorconf, section=1]%
+% %         \printbibliography[heading=countauthornotvak, env=countauthornotvak, keyword=biblioauthornotvak, section=1]%
+% %         \printbibliography[heading=countauthor, env=countauthor, keyword=biblioauthor, section=1]%
+%         \nocite{Voitsik_2018, Kutkin_2018}
+%
+%
+%     \end{refsection}
+% %     \begin{refsection}[vak,papers,conf]%Блок, позволяющий отобрать из всех работ автора наиболее значимые, и только их вывести в автореферате, но считать в блоке выше общее число работ
+% %         \printbibliography[heading=countauthorvak, env=countauthorvak, keyword=biblioauthorvak, section=2]%
+% %         \printbibliography[heading=countauthornotvak, env=countauthornotvak, keyword=biblioauthornotvak, section=2]%
+% %         \printbibliography[heading=countauthorconf, env=countauthorconf, keyword=biblioauthorconf, section=2]%
+% %         \printbibliography[heading=countauthor, env=countauthor, keyword=biblioauthor, section=2]%
+% %         \nocite{vakbib2}%vak
+% %         \nocite{bib1}%notvak
+% %         \nocite{confbib1}%conf
+% %     \end{refsection}
+% }
 % При использовании пакета \verb!biblatex! для автоматического подсчёта
 % количества публикаций автора по теме диссертации, необходимо
 % их~здесь перечислить с использованием команды \verb!\nocite!.
 
+\section*{\authorbibtitle}
+Основные результаты по теме диссертации изложены в~\arabic{citeauthorvak}~научных статьях
+\cite{Voitsik_2018, Kardashev_2013_rus, Kovalev_2014_rus, Lobanov_2015, Kutkin_2018}, в
+рецензируемых журналах и изданиях, рекомендованных ВАК.
+\insertbiblioauthorcited
+
 {\contribution}
 
 
-\section*{Объем и структура работы}
-
-Диссертация состоит из введения, трёх глав, заключения и списка литературы.
-Полный объём диссертации составляет
-\formbytotal{TotPages}{страниц}{у}{ы}{}, включая
-\formbytotal{totalcount@figure}{рисун}{ок}{ка}{ков} и
-\formbytotal{totalcount@table}{таблиц}{у}{ы}{}.   Список литературы содержит
-\formbytotal{citenum}{наименован}{ие}{ия}{ий}.
-
+% \section*{Объем и структура диссертации}
+%
+% Диссертация состоит из введения, трёх глав, заключения и списка литературы.
+% Полный объём диссертации составляет
+% \formbytotal{TotPages}{страниц}{у}{ы}{}, включая
+% \formbytotal{totalcount@figure}{рисун}{ок}{ка}{ков} и
+% \formbytotal{totalcount@table}{таблиц}{у}{ы}{}.   Список литературы содержит
+% \formbytotal{citenum}{наименован}{ие}{ия}{ий}.
+%

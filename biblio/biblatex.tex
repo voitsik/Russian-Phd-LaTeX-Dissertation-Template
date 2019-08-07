@@ -53,6 +53,17 @@ sorting=none,% настройка сортировки списка литера
     }
 }{}
 
+
+% Short Journal names
+\def\aj{AJ}%          % Astronomical Journal
+\def\apj{ApJ}%        % Astrophysical Journal
+\def\araa{ARA\&A}%    % Annual Review of Astron and Astrophys
+\def\aap{A\&A}%       % Astronomy and Astrophysics
+\def\aapr{A\&A~Rev.}% % Astronomy and Astrophysics Reviews
+\def\aaps{A\&AS}%     % Astronomy and Astrophysics, Supplement
+\def\mnras{MNRAS}%    % Monthly Notices of the Royal Astronomical Society
+
+
 %%% Подключение файлов bib %%%
 \addbibresource[label=other]{biblio/othercites.bib}
 \addbibresource[label=vak]{biblio/authorpapersVAK.bib}
@@ -341,9 +352,14 @@ sorting=none,% настройка сортировки списка литера
 \printbibliography[heading=counter,env=counter,keyword=bibliofull,section=0]
 }
 
+% \DeclareRefcontext{ap}{labelprefix=A}
+
 \newcommand*{\insertbiblioauthorcited}{
-\printbibliography[heading=authorpublications,keyword=biblioauthor,section=0,title=\authorbibtitle]
+\begin{refcontext}[labelprefix=A]
+\printbibliography[heading=authorpublications,keyword=biblioauthor,section=0]
+\end{refcontext}
 }
+
 \newcommand*{\insertbiblioauthor}{
 \printbibliography[heading=authorpublications,keyword=biblioauthor,section=1,title=\authorbibtitle]
 }
@@ -358,6 +374,8 @@ sorting=none,% настройка сортировки списка литера
 }
 
 \newcommand*{\insertbiblioother}{
-\printbibliography[heading=otherpublications,keyword=biblioother]
+\begin{refcontext}
+\printbibliography[resetnumbers,heading=otherpublications,keyword=biblioother]
+\end{refcontext}
 }
 
