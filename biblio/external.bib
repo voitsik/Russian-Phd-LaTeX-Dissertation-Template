@@ -139,6 +139,21 @@
   language = {russian}
 }
 
+% !!! этот пример НЕ работает с bibtex
+% Тот же пример, с использованием https://www.ctan.org/pkg/biblatex-gost
+@THESIS{Sirotko2,
+  author =       {Сиротко, Владимир Викторович},
+  title =        {Медико-социальные аспекты городского травматизма в современных условиях},
+  media =        {text},
+  type =         {phdautoref},
+  science =      {мед. наук},
+  specialitycode ={14.00.33},
+  address =      {М.},
+  year =         {2006},
+  pagetotal =    {26},
+  language =     {russian},
+}
+
 @BOOK{Lukina,
   author = {Лукина, Валентина Александровна},
   title = {Творческая история «Записок охотника» И. С. Тургенева : автореф. дис. ... канд. филол. наук : 10.01.01},
@@ -146,6 +161,21 @@
   year = {2006},
   numpages = {26},
   language = {russian}
+}
+
+% !!! этот пример НЕ работает с bibtex
+% Тот же пример, с использованием https://www.ctan.org/pkg/biblatex-gost
+@THESIS{Lukina2,
+  author =       {Лукина, Валентина Александровна},
+  title =        {Творческая история «Записок охотника» И. С. Тургенева},
+  media =        {text},
+  type =         {phdautoref},
+  science =      {филол. наук},
+  specialitycode ={10.01.01},
+  address =      {СПб.},
+  year =         {2006},
+  pagetotal =    {26},
+  language =     {russian},
 }
 
 % ГОСТ Р 7.0.11-2011, Приложение Б, Отчёты о научно-исследовательской работе
@@ -169,11 +199,24 @@
   language = {russian}
 }
 
+% !!! этот пример НЕ работает с bibtex
+% Тот же пример, с использованием https://www.ctan.org/pkg/biblatex-gost
+@BOOK{Encyclopedia2,
+  title = {Художественная энциклопедия зарубежного классического искусства},
+  address = {М.},
+  media = {eresource},
+  publisher = {Большая Рос. энкцикл.},
+  year = {1996},
+  note = {1 электрон. опт. диск (CD-ROM)},
+  language = {russian},
+}
+
 @ARTICLE{Nasirova,
   author = {Насырова, Г. А.},
   title = {Модели государственного регулирования страховой деятельности [Электронный ресурс]},
   journal = {Вестник Финансовой академии},
   year = {2003},
+  media = {eresource},
   number = {4},
   note = {Режим доступа: http://vestnik.fa.ru/4(28)2003/4.html},
   language = {russian}
@@ -216,7 +259,7 @@
 }
 
 @BOOK{Book,
-  author    = {Peter Babington}, 
+  author    = {Peter Babington},
   title     = {The title of the work},
   publisher = {The name of the publisher},
   year      = {1993},
@@ -232,7 +275,7 @@
 
 @BOOKLET{Booklet,
   title        = {The title of the work},
-  author       = {Peter Caxton}, 
+  author       = {Peter Caxton},
   howpublished = {How it was published},
   address      = {The address of the publisher},
   month        = {7},
@@ -242,7 +285,7 @@
 }
 
 @CONFERENCE{Conference,
-  author       = {Peter Draper}, 
+  author       = {Peter Draper},
   title        = {The title of the work},
   booktitle    = {The title of the book},
   year         = {1993},
@@ -295,7 +338,7 @@
 
 @MANUAL{Manual,
   title        = {The title of the work},
-  author       = {Peter Gainsford}, 
+  author       = {Peter Gainsford},
   organization = {The organization},
   address      = {The address of the publisher},
   edition      = {3},
@@ -327,7 +370,7 @@
 }
 
 @PHDTHESIS{Phdthesis,
-  author       = {Peter Joslin}, 
+  author       = {Peter Joslin},
   title        = {The title of the work},
   school       = {The school where the thesis was written},
   year         = {1993},
@@ -364,7 +407,7 @@
 }
 
 @UNPUBLISHED{Unpublished,
-  author       = {Peter Marcheford}, 
+  author       = {Peter Marcheford},
   title        = {The title of the work},
   note         = {An optional note},
   month        = {7},
@@ -468,12 +511,12 @@
   language={english}
 }
 
-% Real, β sign 
+% Real, β sign
 % inputenc don't know β sign %aluminosilicate-β-quartz
 % Знаки типа β, которые не знает таблица кодировки, с которой работает компилятор нужно заменять на latex команды
 % doi должен быть без http://dx.doi.org/
 @article{Shoji199895,
-title = "Low-temperature anodic bonding using lithium aluminosilicate-$\beta$-quartz glass ceramic",
+title = "Low-temperature anodic bonding using lithium aluminosilicate-\(\beta\)-quartz glass ceramic",
 journal = "Sensors and Actuators A: Physical",
 volume = "64",
 number = "1",
@@ -536,3 +579,59 @@ keywords = "Glass ceramic",
   language                 = {english}
 }
 
+% !!! этот пример НЕ работает с bibtex
+% Примеры оформления патентов из пакета https://www.ctan.org/pkg/biblatex-gost
+@Patent{patent2h,
+  heading =      {Заявка 1095735 Рос. федерация, МПК\ensuremath{^7} B 64 G 1/00},
+  author =       {Тернер, Э. В.},
+  authortype =   {США},
+  title =        {Одноразовая ракета-носитель},
+  media =        {text},
+  holder =       {{заявитель Спейс Системз/Лорал, инк.}},
+  credits =      {патент. поверенный Егорова Г. Б.},
+  reqnumber =    {2000108705/28},
+  date =         {2000-04-07},
+  publdate =     {2001-03-10},
+  publication =  {Бюл. № 7 (I ч.)\midsentence},
+  prdate =       {1999-04-09},
+  prnumber =     {09/289, 037},
+  prcountry =    {countryus},
+  pagetotal =    {5 с.~: ил.},
+  language =     {russian},
+}
+
+@Patent{patent3h,
+  heading =      {А. с. 1007970 СССР, МКИ\ensuremath{^3} В 25.1 15/00},
+  author =       {В. С. Ваулин and В. Г. Кемайкин},
+  authortype =   {СССР},
+  title =        {Устройство для захвата неориентированных деталей типа валов},
+  media =        {text},
+  reqnumber =    {3360585/25-08},
+  date =         {1981-11-23},
+  publication =  {Бюл. № 12},
+  publdate =     {1983-03-30},
+  pagetotal =    {2 с.~: ил.},
+  language =     {russian},
+}
+
+@Patent{patent2,
+  author =       {Тернер, Э. В.},
+  authortype =   {США},
+  title =        {Одноразовая ракета-носитель},
+  media =        {text},
+  type =         {patreq},
+  number =       1095735,
+  location =     {countryru},
+  ipc =          {МПК\ensuremath{^7} B 64 G 1/00},
+  holder =       {{заявитель Спейс Системз/Лорал, инк.}},
+  credits =      {патент. поверенный Егорова Г. Б.},
+  reqnumber =    {2000108705/28},
+  date =         {2000-04-07},
+  publdate =     {2001-03-10},
+  publication =  {Бюл. № 7 (I ч.)\midsentence},
+  prioritydate = {1999-04-09},
+  prioritynumber ={09/289, 037},
+  prioritycountry ={countryus},
+  pagetotal =    {5 с.~: ил.},
+  language =     {russian},
+}
