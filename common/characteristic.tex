@@ -52,47 +52,74 @@
 {\probation}
 
 
-%\publications\ Основные результаты по теме диссертации изложены в ХХ печатных изданиях~\cite{Sokolov,Gaidaenko,Lermontov,Management},
-%Х из которых изданы в журналах, рекомендованных ВАК~\cite{Sokolov,Gaidaenko}, 
-%ХХ --- в тезисах докладов~\cite{Lermontov,Management}.
+%%% Реализация пакетом biblatex через движок biber
+    \begin{refsection}[bl-author]
+        % Это refsection=1.
+        % Процитированные здесь работы:
+        %  * подсчитываются, для автоматического составления фразы "Основные результаты ..."
+        %  * попадают в авторскую библиографию, при usefootcite==0 и стиле `\insertbiblioauthor` или `\insertbiblioauthorgrouped`
+        %  * нумеруются там в зависимости от порядка команд `\printbibliography` в этом разделе.
+        %  * при использовании `\insertbiblioauthorgrouped`, порядок команд `\printbibliography` в нём должен быть тем же (см. biblio/biblatex.tex)
+        %
+        % Невидимый библиографический список для подсчёта количества публикаций:
+        \printbibliography[heading=nobibheading, section=1, env=countauthorvak,          keyword=biblioauthorvak]%
+        \printbibliography[heading=nobibheading, section=1, env=countauthorwos,          keyword=biblioauthorwos]%
+        \printbibliography[heading=nobibheading, section=1, env=countauthorscopus,       keyword=biblioauthorscopus]%
+        \printbibliography[heading=nobibheading, section=1, env=countauthorconf,         keyword=biblioauthorconf]%
+        \printbibliography[heading=nobibheading, section=1, env=countauthorother,        keyword=biblioauthorother]%
+        \printbibliography[heading=nobibheading, section=1, env=countauthor,             keyword=biblioauthor]%
+        \printbibliography[heading=nobibheading, section=1, env=countauthorvakscopuswos, filter=vakscopuswos]%
+        \printbibliography[heading=nobibheading, section=1, env=countauthorscopuswos,    filter=scopuswos]%
+        %
+        \nocite{*}%
+        %
+        {\publications} Основные результаты по теме диссертации изложены в~\arabic{citeauthor}~печатных изданиях,
+        \arabic{citeauthorvak} из которых изданы в журналах, рекомендованных ВАК\sloppy%
+        \ifnum \value{citeauthorscopuswos}>0%
+            , \arabic{citeauthorscopuswos} "--- в~периодических научных журналах, индексируемых Web of~Science и Scopus\sloppy%
+        \fi%
+        \ifnum \value{citeauthorconf}>0%
+            , \arabic{citeauthorconf} "--- в~тезисах докладов.
+        \else%
+            .
+        \fi
+    \end{refsection}%
+%     \begin{refsection}[bl-author]
+%         % Это refsection=2.
+%         % Процитированные здесь работы:
+%         %  * попадают в авторскую библиографию, при usefootcite==0 и стиле `\insertbiblioauthorimportant`.
+%         %  * ни на что не влияют в противном случае
+%         \nocite{vakbib2}%vak
+%         \nocite{bib1}%other
+%         \nocite{confbib1}%conf
+%     \end{refsection}%
+        %
+        % Всё, что вне этих двух refsection, это refsection=0,
+        %  * для диссертации - это нормальные ссылки, попадающие в обычную библиографию
+        %  * для автореферата:
+        %     * при usefootcite==0, ссылка корректно сработает только для источника из `external.bib`. Для своих работ --- напечатает "[0]" (и даже Warning не вылезет).
+        %     * при usefootcite==1, ссылка сработает нормально. В авторской библиографии будут только процитированные в refsection=0 работы.
+        %
+        % Невидимый библиографический список для подсчёта количества внешних публикаций
+        % Используется, чтобы убрать приставку "А" у работ автора, если в автореферате нет
+        % цитирований внешних источников.
+        % Замедляет компиляцию
+    \ifsynopsis
+    \ifnumequal{\value{draft}}{0}{
+      \printbibliography[heading=nobibheading, section=0, env=countexternal,
+keyword=biblioexternal]%
+    }{}
+    \fi
 
-% \ifnumequal{\value{bibliosel}}{0}{% Встроенная реализация с загрузкой файла через движок bibtex8
-%     \publications\
-%
-% %     Основные результаты по теме диссертации изложены в XX печатных изданиях,
-% %     X из которых изданы в журналах, рекомендованных ВАК,
-% %     X "--- в тезисах докладов.%
-% }{% Реализация пакетом biblatex через движок biber
-% %Сделана отдельная секция, чтобы не отображались в списке цитированных материалов
-%     \begin{refsection}% Подсчет и нумерация авторских работ. Засчитываются только те, которые были прописаны внутри \nocite{}.
-%         %Чтобы сменить порядок разделов в сгрупированном списке литературы необходимо перетасовать следующие три строчки, а также команды в разделе \newcommand*{\insertbiblioauthorgrouped} в файле biblio/biblatex.tex
-%         \printbibliography[heading=countauthorvak, env=countauthorvak, keyword=biblioauthorvak, section=1]%
-% %         \printbibliography[heading=countauthorconf, env=countauthorconf, keyword=biblioauthorconf, section=1]%
-% %         \printbibliography[heading=countauthornotvak, env=countauthornotvak, keyword=biblioauthornotvak, section=1]%
-% %         \printbibliography[heading=countauthor, env=countauthor, keyword=biblioauthor, section=1]%
-%         \nocite{Voitsik_2018, Kutkin_2018}
-%
-%
-%     \end{refsection}
-% %     \begin{refsection}[vak,papers,conf]%Блок, позволяющий отобрать из всех работ автора наиболее значимые, и только их вывести в автореферате, но считать в блоке выше общее число работ
-% %         \printbibliography[heading=countauthorvak, env=countauthorvak, keyword=biblioauthorvak, section=2]%
-% %         \printbibliography[heading=countauthornotvak, env=countauthornotvak, keyword=biblioauthornotvak, section=2]%
-% %         \printbibliography[heading=countauthorconf, env=countauthorconf, keyword=biblioauthorconf, section=2]%
-% %         \printbibliography[heading=countauthor, env=countauthor, keyword=biblioauthor, section=2]%
-% %         \nocite{vakbib2}%vak
-% %         \nocite{bib1}%notvak
-% %         \nocite{confbib1}%conf
-% %     \end{refsection}
-% }
-% При использовании пакета \verb!biblatex! для автоматического подсчёта
-% количества публикаций автора по теме диссертации, необходимо
-% их~здесь перечислить с использованием команды \verb!\nocite!.
-
-\section*{\authorbibtitle}
-Основные результаты по теме диссертации изложены в~\arabic{citeauthorvak}~научных статьях
+% \section*{\authorbibtitle}
+Основные результаты по теме диссертации изложены в~\arabic{citeauthor}~научных статьях
 \cite{Voitsik_2018, Kardashev_2013_rus, Kovalev_2014_rus, Lobanov_2015, Kutkin_2018}, в
 рецензируемых журналах и изданиях, рекомендованных ВАК.
-\insertbiblioauthorcited
+% \insertbiblioauthorcited
+
+% \begin{refcontext}[labelprefix=A]
+\insertbiblioauthor
+% \end{refcontext}
 
 {\contribution}
 

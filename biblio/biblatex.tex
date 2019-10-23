@@ -29,6 +29,7 @@ sorting=none,% настройка сортировки списка литера
 }
 \makeatother
 
+\ifsynopsis
 \ifnumgreater{\value{usefootcite}}{0}{
     \ExecuteBibliographyOptions{autocite=footnote}
     \newbibmacro*{cite:full}{%
@@ -52,6 +53,7 @@ sorting=none,% настройка сортировки списка литера
         \usebibmacro{postnote}%
     }
 }{}
+\fi
 
 
 % Short Journal names
@@ -65,45 +67,45 @@ sorting=none,% настройка сортировки списка литера
 
 
 %%% Подключение файлов bib %%%
-\addbibresource[label=other]{biblio/othercites.bib}
-\addbibresource[label=vak]{biblio/authorpapersVAK.bib}
-\addbibresource[label=papers]{biblio/authorpapers.bib}
-\addbibresource[label=conf]{biblio/authorconferences.bib}
-
+\addbibresource[label=bl-external]{biblio/external.bib}
+\addbibresource[label=bl-author]{biblio/author.bib}
 
 %http://tex.stackexchange.com/a/141831/79756
 %There is a way to automatically map the language field to the langid field. The following lines in the preamble should be enough to do that.
 %This command will copy the language field into the langid field and will then delete the contents of the language field. The language field will only be deleted if it was successfully copied into the langid field.
-\DeclareSourcemap{ %модификация bib файла перед тем, как им займётся biblatex 
+\DeclareSourcemap{ %модификация bib файла перед тем, как им займётся biblatex
     \maps{
         \map{% перекидываем значения полей language в поля langid, которыми пользуется biblatex
             \step[fieldsource=language, fieldset=langid, origfieldval, final]
             \step[fieldset=language, null]
         }
+        \map{% перекидываем значения полей numpages в поля pagetotal, которыми пользуется biblatex
+            \step[fieldsource=numpages, fieldset=pagetotal, origfieldval, final]
+            \step[fieldset=numpages, null]
+        }
+        \map{% перекидываем значения полей pagestotal в поля pagetotal, которыми пользуется biblatex
+            \step[fieldsource=pagestotal, fieldset=pagetotal, origfieldval, final]
+            \step[fieldset=pagestotal, null]
+        }
         \map[overwrite]{% перекидываем значения полей shortjournal, если они есть, в поля journal, которыми пользуется biblatex
             \step[fieldsource=shortjournal, final]
             \step[fieldset=journal, origfieldval]
+            \step[fieldset=shortjournal, null]
         }
         \map[overwrite]{% перекидываем значения полей shortbooktitle, если они есть, в поля booktitle, которыми пользуется biblatex
             \step[fieldsource=shortbooktitle, final]
             \step[fieldset=booktitle, origfieldval]
-        }
-        \map[overwrite, refsection=0]{% стираем значения всех полей addendum
-            \perdatasource{biblio/authorpapersVAK.bib}
-            \perdatasource{biblio/authorpapers.bib}
-            \perdatasource{biblio/authorconferences.bib}
-            \step[fieldsource=addendum, final]
-            \step[fieldset=addendum, null] %чтобы избавиться от информации об объёме авторских статей, в отличие от автореферата
-        }
-        \map{% перекидываем значения полей numpages в поля pagetotal, которыми пользуется biblatex
-            \step[fieldsource=numpages, fieldset=pagetotal, origfieldval, final]
-            \step[fieldset=pagestotal, null]
+            \step[fieldset=shortbooktitle, null]
         }
         \map{% если в поле medium написано "Электронный ресурс", то устанавливаем поле media, которым пользуется biblatex, в значение eresource.
             \step[fieldsource=medium,
             match=\regexp{Электронный\s+ресурс},
             final]
             \step[fieldset=media, fieldvalue=eresource]
+            \step[fieldset=medium, null]
+        }
+        \map{% использование media=text по умолчанию
+            \step[fieldset=media, fieldvalue=text]
         }
         \map[overwrite]{% стираем значения всех полей issn
             \step[fieldset=issn, null]
@@ -118,21 +120,46 @@ sorting=none,% настройка сортировки списка литера
             replace={$3-$2-$1$4}, % $4 вставлен исключительно ради нормальной работы программ подсветки синтаксиса, которые некорректно обрабатывают $ в таких конструкциях
             final]
         }
-        \map[overwrite]{ % добавляем ключевые слова, чтобы различать источники
-            \perdatasource{biblio/othercites.bib}
-            \step[fieldset=keywords, fieldvalue={biblioother,bibliofull}]
+        \map[overwrite]{ % стираем ключевые слова
+            \step[fieldsource=keywords]
+            \step[fieldset=keywords,null]
+        }
+        % реализация foreach различается для biblatex v3.12 и v3.13.
+        % Для версии v3.13 эта конструкция заменяет последующие 5 структур map
+        % \map[overwrite,foreach={authorvak,authorscopus,authorwos,authorconf,authorother}]{ % записываем информацию о типе публикации в ключевые слова
+        %     \step[fieldsource=$MAPLOOP,final=true]
+        %     \step[fieldset=keywords,fieldvalue={,biblio$MAPLOOP},append=true]
+        % }
+        \map[overwrite]{ % записываем информацию о типе публикации в ключевые слова
+            \step[fieldsource=authorvak,final=true]
+            \step[fieldset=keywords,fieldvalue={,biblioauthorvak},append=true]
+        }
+        \map[overwrite]{ % записываем информацию о типе публикации в ключевые слова
+            \step[fieldsource=authorscopus,final=true]
+            \step[fieldset=keywords,fieldvalue={,biblioauthorscopus},append=true]
+        }
+        \map[overwrite]{ % записываем информацию о типе публикации в ключевые слова
+            \step[fieldsource=authorwos,final=true]
+            \step[fieldset=keywords,fieldvalue={,biblioauthorwos},append=true]
+        }
+        \map[overwrite]{ % записываем информацию о типе публикации в ключевые слова
+            \step[fieldsource=authorconf,final=true]
+            \step[fieldset=keywords,fieldvalue={,biblioauthorconf},append=true]
+        }
+        \map[overwrite]{ % записываем информацию о типе публикации в ключевые слова
+            \step[fieldsource=authorother,final=true]
+            \step[fieldset=keywords,fieldvalue={,biblioauthorother},append=true]
         }
         \map[overwrite]{ % добавляем ключевые слова, чтобы различать источники
-            \perdatasource{biblio/authorpapersVAK.bib}
-            \step[fieldset=keywords, fieldvalue={biblioauthorvak,biblioauthor,bibliofull}]
+            \perdatasource{biblio/external.bib}
+            \step[fieldset=keywords, fieldvalue={,biblioexternal},append=true]
         }
         \map[overwrite]{ % добавляем ключевые слова, чтобы различать источники
-            \perdatasource{biblio/authorpapers.bib}
-            \step[fieldset=keywords, fieldvalue={biblioauthornotvak,biblioauthor,bibliofull}]
+            \perdatasource{biblio/author.bib}
+            \step[fieldset=keywords, fieldvalue={,biblioauthor},append=true]
         }
         \map[overwrite]{ % добавляем ключевые слова, чтобы различать источники
-            \perdatasource{biblio/authorconferences.bib}
-            \step[fieldset=keywords, fieldvalue={biblioauthorconf,biblioauthor,bibliofull}]
+            \step[fieldset=keywords, fieldvalue={,bibliofull},append=true]
         }
 %        \map[overwrite]{% стираем значения всех полей series
 %            \step[fieldset=series, null]
@@ -149,7 +176,41 @@ sorting=none,% настройка сортировки списка литера
 %            final]
 %            \step[fieldset=media, null]
 %        }
+        % временный костыль для biber версии 2.13
+        \map[overwrite]{ % добавляем ключевые слова, чтобы различать источники
+            \perdatasource{external.bib}
+            \step[fieldset=keywords, fieldvalue={,biblioexternal},append=true]
+        }
+        \map[overwrite]{ % добавляем ключевые слова, чтобы различать источники
+            \perdatasource{author.bib}
+            \step[fieldset=keywords, fieldvalue={,biblioauthor},append=true]
+        }
     }
+}
+
+\ifsynopsis
+\else
+\DeclareSourcemap{ %модификация bib файла перед тем, как им займётся biblatex
+    \maps{
+        \map[overwrite]{% стираем значения всех полей addendum
+            \perdatasource{biblio/author.bib}
+            \step[fieldset=addendum, null] %чтобы избавиться от информации об объёме авторских статей, в отличие от автореферата
+        }
+         % временный костыль для biber версии 2.13
+        \map[overwrite]{% стираем значения всех полей addendum
+            \perdatasource{author.bib}
+            \step[fieldset=addendum, null] %чтобы избавиться от информации об объёме авторских статей, в отличие от автореферата
+        }
+    }
+}
+\fi
+
+\defbibfilter{vakscopuswos}{%
+    keyword=biblioauthorvak or keyword=biblioauthorscopus or keyword=biblioauthorwos
+}
+
+\defbibfilter{scopuswos}{%
+    keyword=biblioauthorscopus or keyword=biblioauthorwos
 }
 
 %%% Убираем неразрывные пробелы перед двоеточием и точкой с запятой %%%
@@ -264,8 +325,8 @@ sorting=none,% настройка сортировки списка литера
 %\defbibenvironment{bibliography} % переопределяем окружение библиографии из gost-numeric.bbx пакета biblatex-gost
 %  {\list
 %     {\printtext[labelnumberwidth]{%
-%	\printfield{prefixnumber}%
-%	\printfield{labelnumber}}}
+%       \printfield{prefixnumber}%
+%       \printfield{labelnumber}}}
 %     {%
 %      \setlength{\labelwidth}{\labelnumberwidth}%
 %      \setlength{\leftmargin}{0pt}% default is \labelwidth
@@ -281,101 +342,108 @@ sorting=none,% настройка сортировки списка литера
 %  {\endlist}
 %  {\item}
 
-%% Счётчик использованных ссылок на литературу, обрабатывающий с учётом неоднократных ссылок
-%http://tex.stackexchange.com/a/66851/79756
-%\newcounter{citenum}
-\newtotcounter{citenum}
+%%% Макросы автоматического подсчёта количества авторских публикаций.
+% Печатают невидимую (пустую) библиографию, считая количество источников.
+% http://tex.stackexchange.com/a/66851/79756
+%
 \makeatletter
-\defbibenvironment{counter} %Env of bibliography
-  {\setcounter{citenum}{0}%
-  \renewcommand{\blx@driver}[1]{}%
-  } %what is doing at the beginining of bibliography. In your case it's : a. Reset counter b. Say to print nothing when a entry is tested.
-  {} %Здесь то, что будет выводиться командой \printbibliography. \thecitenum сюда писать не надо
-  {\stepcounter{citenum}} %What is printing / executed at each entry.
+        \newtotcounter{citenum}
+        \defbibenvironment{counter}
+            {\setcounter{citenum}{0}\renewcommand{\blx@driver}[1]{}} % begin code: убирает весь выводимый текст
+            {} % end code
+            {\stepcounter{citenum}} % item code: cчитает "печатаемые в библиографию" источники
+
+        \newtotcounter{citeauthorvak}
+        \defbibenvironment{countauthorvak}
+            {\setcounter{citeauthorvak}{0}\renewcommand{\blx@driver}[1]{}}
+            {}
+            {\stepcounter{citeauthorvak}}
+
+        \newtotcounter{citeauthorscopus}
+        \defbibenvironment{countauthorscopus}
+                {\setcounter{citeauthorscopus}{0}\renewcommand{\blx@driver}[1]{}}
+                {}
+                {\stepcounter{citeauthorscopus}}
+
+        \newtotcounter{citeauthorwos}
+        \defbibenvironment{countauthorwos}
+                {\setcounter{citeauthorwos}{0}\renewcommand{\blx@driver}[1]{}}
+                {}
+                {\stepcounter{citeauthorwos}}
+
+        \newtotcounter{citeauthorother}
+        \defbibenvironment{countauthorother}
+                {\setcounter{citeauthorother}{0}\renewcommand{\blx@driver}[1]{}}
+                {}
+                {\stepcounter{citeauthorother}}
+
+        \newtotcounter{citeauthorconf}
+        \defbibenvironment{countauthorconf}
+                {\setcounter{citeauthorconf}{0}\renewcommand{\blx@driver}[1]{}}
+                {}
+                {\stepcounter{citeauthorconf}}
+
+        \newtotcounter{citeauthor}
+        \defbibenvironment{countauthor}
+                {\setcounter{citeauthor}{0}\renewcommand{\blx@driver}[1]{}}
+                {}
+                {\stepcounter{citeauthor}}
+
+        \newtotcounter{citeauthorvakscopuswos}
+        \defbibenvironment{countauthorvakscopuswos}
+                {\setcounter{citeauthorvakscopuswos}{0}\renewcommand{\blx@driver}[1]{}}
+                {}
+                {\stepcounter{citeauthorvakscopuswos}}
+
+        \newtotcounter{citeauthorscopuswos}
+        \defbibenvironment{countauthorscopuswos}
+                {\setcounter{citeauthorscopuswos}{0}\renewcommand{\blx@driver}[1]{}}
+                {}
+                {\stepcounter{citeauthorscopuswos}}
+
+        \newtotcounter{citeexternal}
+        \defbibenvironment{countexternal}
+                {\setcounter{citeexternal}{0}\renewcommand{\blx@driver}[1]{}}
+                {}
+                {\stepcounter{citeexternal}}
 \makeatother
-\defbibheading{counter}{}
 
-
-
-\newtotcounter{citeauthorvak}
-\makeatletter
-\defbibenvironment{countauthorvak} %Env of bibliography
-{\setcounter{citeauthorvak}{0}%
-    \renewcommand{\blx@driver}[1]{}%
-} %what is doing at the beginining of bibliography. In your case it's : a. Reset counter b. Say to print nothing when a entry is tested.
-{} %Здесь то, что будет выводиться командой \printbibliography. Обойдёмся без \theciteauthorvak в нашей реализации
-{\stepcounter{citeauthorvak}} %What is printing / executed at each entry.
-\makeatother
-\defbibheading{countauthorvak}{}
-
-\newtotcounter{citeauthornotvak}
-\makeatletter
-\defbibenvironment{countauthornotvak} %Env of bibliography
-{\setcounter{citeauthornotvak}{0}%
-    \renewcommand{\blx@driver}[1]{}%
-} %what is doing at the beginining of bibliography. In your case it's : a. Reset counter b. Say to print nothing when a entry is tested.
-{} %Здесь то, что будет выводиться командой \printbibliography. Обойдёмся без \theciteauthornotvak в нашей реализации
-{\stepcounter{citeauthornotvak}} %What is printing / executed at each entry.
-\makeatother
-\defbibheading{countauthornotvak}{}
-
-\newtotcounter{citeauthorconf}
-\makeatletter
-\defbibenvironment{countauthorconf} %Env of bibliography
-{\setcounter{citeauthorconf}{0}%
-    \renewcommand{\blx@driver}[1]{}%
-} %what is doing at the beginining of bibliography. In your case it's : a. Reset counter b. Say to print nothing when a entry is tested.
-{} %Здесь то, что будет выводиться командой \printbibliography. Обойдёмся без \theciteauthorconf в нашей реализации
-{\stepcounter{citeauthorconf}} %What is printing / executed at each entry.
-\makeatother
-\defbibheading{countauthorconf}{}
-
-\newtotcounter{citeauthor}
-\makeatletter
-\defbibenvironment{countauthor} %Env of bibliography
-{\setcounter{citeauthor}{0}%
-    \renewcommand{\blx@driver}[1]{}%
-} %what is doing at the beginining of bibliography. In your case it's : a. Reset counter b. Say to print nothing when a entry is tested.
-{} %Здесь то, что будет выводиться командой \printbibliography. Обойдёмся без \theciteauthor в нашей реализации
-{\stepcounter{citeauthor}} %What is printing / executed at each entry.
-\makeatother
-\defbibheading{countauthor}{}
-
-\defbibheading{authorpublications}[\authorbibtitle]{\section*{#1}}
-\defbibheading{pubsubgroup}{\noindent\textbf{#1}}
-\defbibheading{otherpublications}{\section*{#1}}
+\defbibheading{nobibheading}{} % пустой заголовок, для подсчёта публикаций с помощью невидимой библиографии
+\defbibheading{pubgroup}{\section*{#1}} % обычный стиль, заголовок-секция
+\defbibheading{pubsubgroup}{\noindent\textbf{#1}} % для подразделов "по типу источника"
 
 
 %%% Создание команд для вывода списка литературы %%%
 \newcommand*{\insertbibliofull}{
-\printbibliography[keyword=bibliofull,section=0,title=\fullbibtitle]
-\printbibliography[heading=counter,env=counter,keyword=bibliofull,section=0]
+    \printbibliography[keyword=bibliofull,section=0,title=\bibtitlefull]
+    \ifnumequal{\value{draft}}{0}{
+      \printbibliography[heading=nobibheading,env=counter,keyword=bibliofull,section=0]
+    }{}
 }
-
-% \DeclareRefcontext{ap}{labelprefix=A}
-
-\newcommand*{\insertbiblioauthorcited}{
-\begin{refcontext}[labelprefix=A]
-\printbibliography[heading=authorpublications,keyword=biblioauthor,section=0]
-\end{refcontext}
-}
-
 \newcommand*{\insertbiblioauthor}{
-\printbibliography[heading=authorpublications,keyword=biblioauthor,section=1,title=\authorbibtitle]
+    \begin{refcontext}[labelprefix=A]
+    \printbibliography[heading=pubgroup, section=0, keyword=biblioauthor, title=\bibtitleauthor]
+    \end{refcontext}
 }
 \newcommand*{\insertbiblioauthorimportant}{
-\printbibliography[heading=authorpublications,keyword=biblioauthor,section=2,title={Наиболее значимые \MakeLowercase{\protect\authorbibtitle{}}}]
-}
-\newcommand*{\insertbiblioauthorgrouped}{% Заготовка для вывода сгруппированных печатных работ автора. Порядок нумерации определяется в соответствующих счетчиках внутри окружения refsection в файле common/characteristic.tex
-\section*{\authorbibtitle}
-\printbibliography[heading=pubsubgroup, keyword=biblioauthorvak, section=1,title=\vakbibtitle]%
-\printbibliography[heading=pubsubgroup, keyword=biblioauthorconf, section=1,title=\confbibtitle]%
-\printbibliography[heading=pubsubgroup, keyword=biblioauthornotvak, section=1,title=\notvakbibtitle]%
+    \printbibliography[heading=pubgroup, section=2, keyword=biblioauthor, title=\bibtitleauthorimportant]
 }
 
-\newcommand*{\insertbiblioother}{
-\begin{refcontext}
-\printbibliography[resetnumbers,heading=otherpublications,keyword=biblioother]
-\end{refcontext}
+% Вариант вывода печатных работ автора, с группировкой по типу источника.
+% Порядок команд `\printbibliography` должен соответствовать порядку в файле common/characteristic.tex
+\newcommand*{\insertbiblioauthorgrouped}{
+    \section*{\bibtitleauthor}
+    \ifsynopsis
+    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorvak,    title=\bibtitleauthorvak,resetnumbers=true]
+    \else
+    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorvak,    title=\bibtitleauthorvak,resetnumbers=false]
+    \fi
+    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorwos,    title=\bibtitleauthorwos,resetnumbers=false]%
+    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorscopus, title=\bibtitleauthorscopus,resetnumbers=false]%
+    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorconf,   title=\bibtitleauthorconf,resetnumbers=false]%
+    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorother,  title=\bibtitleauthorother,resetnumbers=false]%
 }
 
+\newcommand*{\insertbiblioexternal}{
+    \printbibliography[heading=pubgroup,    section=0, keyword=biblioexternal,     title=\bibtitlefull]
+}
