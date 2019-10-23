@@ -43,9 +43,7 @@
   \item
   \item
 \end{enumerate}
-% В папке Documents можно ознакомиться в решением совета из Томского ГУ
-% в~файле \verb+Def_positions.pdf+, где обоснованно даются рекомендации
-% по~формулировкам защищаемых положений.
+
 
 {\reliability}
 
@@ -63,63 +61,35 @@
         %
         % Невидимый библиографический список для подсчёта количества публикаций:
         \printbibliography[heading=nobibheading, section=1, env=countauthorvak,          keyword=biblioauthorvak]%
-        \printbibliography[heading=nobibheading, section=1, env=countauthorwos,          keyword=biblioauthorwos]%
-        \printbibliography[heading=nobibheading, section=1, env=countauthorscopus,       keyword=biblioauthorscopus]%
+%         \printbibliography[heading=nobibheading, section=1, env=countauthorwos,          keyword=biblioauthorwos]%
+%         \printbibliography[heading=nobibheading, section=1, env=countauthorscopus,       keyword=biblioauthorscopus]%
         \printbibliography[heading=nobibheading, section=1, env=countauthorconf,         keyword=biblioauthorconf]%
         \printbibliography[heading=nobibheading, section=1, env=countauthorother,        keyword=biblioauthorother]%
         \printbibliography[heading=nobibheading, section=1, env=countauthor,             keyword=biblioauthor]%
-        \printbibliography[heading=nobibheading, section=1, env=countauthorvakscopuswos, filter=vakscopuswos]%
-        \printbibliography[heading=nobibheading, section=1, env=countauthorscopuswos,    filter=scopuswos]%
+%         \printbibliography[heading=nobibheading, section=1, env=countauthorvakscopuswos, filter=vakscopuswos]%
+%         \printbibliography[heading=nobibheading, section=1, env=countauthorscopuswos,    filter=scopuswos]%
         %
         \nocite{*}%
         %
-        {\publications} Основные результаты по теме диссертации изложены в~\arabic{citeauthor}~печатных изданиях,
-        \arabic{citeauthorvak} из которых изданы в журналах, рекомендованных ВАК\sloppy%
-        \ifnum \value{citeauthorscopuswos}>0%
-            , \arabic{citeauthorscopuswos} "--- в~периодических научных журналах, индексируемых Web of~Science и Scopus\sloppy%
-        \fi%
-        \ifnum \value{citeauthorconf}>0%
-            , \arabic{citeauthorconf} "--- в~тезисах докладов.
-        \else%
-            .
-        \fi
+%         {\publications} Основные результаты по теме диссертации изложены в~\arabic{citeauthor}~печатных изданиях,
+%         \arabic{citeauthorvak} из которых изданы в журналах, рекомендованных ВАК\sloppy%
+%         \ifnum \value{citeauthorscopuswos}>0%
+%             , \arabic{citeauthorscopuswos} "--- в~периодических научных журналах, индексируемых Web of~Science и Scopus\sloppy%
+%         \fi%
+%         \ifnum \value{citeauthorconf}>0%
+%             , \arabic{citeauthorconf} "--- в~тезисах докладов.
+%         \else%
+%             .
+%         \fi
     \end{refsection}%
-%     \begin{refsection}[bl-author]
-%         % Это refsection=2.
-%         % Процитированные здесь работы:
-%         %  * попадают в авторскую библиографию, при usefootcite==0 и стиле `\insertbiblioauthorimportant`.
-%         %  * ни на что не влияют в противном случае
-%         \nocite{vakbib2}%vak
-%         \nocite{bib1}%other
-%         \nocite{confbib1}%conf
-%     \end{refsection}%
-        %
-        % Всё, что вне этих двух refsection, это refsection=0,
-        %  * для диссертации - это нормальные ссылки, попадающие в обычную библиографию
-        %  * для автореферата:
-        %     * при usefootcite==0, ссылка корректно сработает только для источника из `external.bib`. Для своих работ --- напечатает "[0]" (и даже Warning не вылезет).
-        %     * при usefootcite==1, ссылка сработает нормально. В авторской библиографии будут только процитированные в refsection=0 работы.
-        %
-        % Невидимый библиографический список для подсчёта количества внешних публикаций
-        % Используется, чтобы убрать приставку "А" у работ автора, если в автореферате нет
-        % цитирований внешних источников.
-        % Замедляет компиляцию
-    \ifsynopsis
-    \ifnumequal{\value{draft}}{0}{
-      \printbibliography[heading=nobibheading, section=0, env=countexternal,
-keyword=biblioexternal]%
-    }{}
-    \fi
 
-% \section*{\authorbibtitle}
+\section*{\bibtitleauthor}
 Основные результаты по теме диссертации изложены в~\arabic{citeauthor}~научных статьях
 \cite{Voitsik_2018, Kardashev_2013_rus, Kovalev_2014_rus, Lobanov_2015, Kutkin_2018}, в
 рецензируемых журналах и изданиях, рекомендованных ВАК.
 % \insertbiblioauthorcited
 
-% \begin{refcontext}[labelprefix=A]
 \insertbiblioauthor
-% \end{refcontext}
 
 {\contribution}
 

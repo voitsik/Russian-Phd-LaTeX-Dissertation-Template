@@ -422,28 +422,30 @@ sorting=none,% настройка сортировки списка литера
 }
 \newcommand*{\insertbiblioauthor}{
     \begin{refcontext}[labelprefix=A]
-    \printbibliography[heading=pubgroup, section=0, keyword=biblioauthor, title=\bibtitleauthor]
+    \printbibliography[heading=nobibheading, section=0, keyword=biblioauthor]
     \end{refcontext}
 }
-\newcommand*{\insertbiblioauthorimportant}{
-    \printbibliography[heading=pubgroup, section=2, keyword=biblioauthor, title=\bibtitleauthorimportant]
-}
+% \newcommand*{\insertbiblioauthorimportant}{
+%     \printbibliography[heading=pubgroup, section=2, keyword=biblioauthor, title=\bibtitleauthorimportant]
+% }
 
 % Вариант вывода печатных работ автора, с группировкой по типу источника.
 % Порядок команд `\printbibliography` должен соответствовать порядку в файле common/characteristic.tex
-\newcommand*{\insertbiblioauthorgrouped}{
-    \section*{\bibtitleauthor}
-    \ifsynopsis
-    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorvak,    title=\bibtitleauthorvak,resetnumbers=true]
-    \else
-    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorvak,    title=\bibtitleauthorvak,resetnumbers=false]
-    \fi
-    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorwos,    title=\bibtitleauthorwos,resetnumbers=false]%
-    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorscopus, title=\bibtitleauthorscopus,resetnumbers=false]%
-    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorconf,   title=\bibtitleauthorconf,resetnumbers=false]%
-    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorother,  title=\bibtitleauthorother,resetnumbers=false]%
-}
+% \newcommand*{\insertbiblioauthorgrouped}{
+%     \section*{\bibtitleauthor}
+%     \ifsynopsis
+%     \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorvak,    title=\bibtitleauthorvak,resetnumbers=true]
+%     \else
+%     \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorvak,    title=\bibtitleauthorvak,resetnumbers=false]
+%     \fi
+%     \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorwos,    title=\bibtitleauthorwos,resetnumbers=false]%
+%     \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorscopus, title=\bibtitleauthorscopus,resetnumbers=false]%
+%     \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorconf,   title=\bibtitleauthorconf,resetnumbers=false]%
+%     \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorother,  title=\bibtitleauthorother,resetnumbers=false]%
+% }
 
 \newcommand*{\insertbiblioexternal}{
-    \printbibliography[heading=pubgroup,    section=0, keyword=biblioexternal,     title=\bibtitlefull]
+    \begin{refcontext}
+    \printbibliography[resetnumbers=true,heading=pubgroup,section=0,keyword=biblioexternal,title=\bibtitlefull]
+    \end{refcontext}
 }

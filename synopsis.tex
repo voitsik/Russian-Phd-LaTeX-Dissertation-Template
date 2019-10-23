@@ -1,5 +1,7 @@
 %&preformat-synopsis
-\RequirePackage[l2tabu,orthodox]{nag} % Раскомментировав, можно в логе получать рекомендации относительно правильного использования пакетов и предупреждения об устаревших и нерекомендуемых пакетах
+\RequirePackage[l2tabu,orthodox]{nag} % Раскомментировав, можно в логе получать рекомендации
+                                      % относительно правильного использования пакетов и
+                                      % предупреждения об устаревших и нерекомендуемых пакетах
 \PassOptionsToPackage{bookmarks=false}{hyperref}
 \documentclass[a5paper,10pt,twoside,openany,article]{memoir} %,draft
 
@@ -32,6 +34,8 @@
 \typeout{AltFont: \arabic{usealtfont}}
 \typeout{Bibliography backend: \arabic{bibliosel}}
 \typeout{Precompile images: \arabic{imgprecompile}}
+% Вывести информацию о версиях используемых библиотек в лог сборки
+\listfiles
 
 \begin{document}
 
