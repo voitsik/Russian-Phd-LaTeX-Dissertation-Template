@@ -6,6 +6,10 @@ $ALTFONT = $ENV{ALTFONT};
 $ALTFONT //= '';
 $USEBIBER = $ENV{USEBIBER};
 $USEBIBER //= '';
+$USEFOOTCITE = $ENV{USEFOOTCITE};
+$USEFOOTCITE //= '';
+$BIBGROUPED = $ENV{BIBGROUPED};
+$BIBGROUPED //= '';
 $IMGCOMPILE = $ENV{IMGCOMPILE};
 $IMGCOMPILE //= '';
 $NOTESON = $ENV{NOTESON};
@@ -18,6 +22,8 @@ $REGEXDIRS = $ENV{REGEXDIRS};
 $REGEXDIRS //= '. Dissertation Synopsis Presentation';
 $TIMERON = $ENV{TIMERON};
 $TIMERON //= '0';
+$TIKZFILE = $ENV{TIKZFILE};
+$TIKZFILE //= '';
 
 
 $texargs = '';
@@ -37,16 +43,28 @@ if ($USEBIBER ne '') {
     $texargs = $texargs . '\newcounter{bibliosel}' .
         '\setcounter{bibliosel}' . '{' . $USEBIBER . '}';
 }
+if ($USEFOOTCITE ne '') {
+    $texargs = $texargs . '\newcounter{usefootcite}' .
+        '\setcounter{usefootcite}' . '{' . $USEFOOTCITE . '}';
+}
+if ($BIBGROUPED ne '') {
+    $texargs = $texargs . '\newcounter{bibgrouped}' .
+        '\setcounter{bibgrouped}' . '{' . $BIBGROUPED . '}';
+}
 if ($IMGCOMPILE ne '') {
     $texargs = $texargs . '\newcounter{imgprecompile}' .
         '\setcounter{imgprecompile}' . '{' . $IMGCOMPILE . '}';
 }
-if ($IMGCOMPILE eq '1') {
+if ($IMGCOMPILE ne '') {
    $LATEXFLAGS = $LATEXFLAGS . ' -shell-escape'
 }
 if ($NOTESON ne '') {
     $texargs = $texargs . '\newcounter{presnotes}' .
         '\setcounter{presnotes}' . '{' . $NOTESON . '}';
+}
+if ($TIKZFILE ne '') {
+    $texargs = $texargs . '\def' . '\tikzfilename' .
+	'{' . $TIKZFILE . '}';
 }
 
 # set options for all *latex

@@ -16,6 +16,8 @@
 # FONTFAMILY ?= # 0=CMU;1=MS fonts;2=Liberation fonts
 # ALTFONT ?= # 0=Computer Modern;1=pscyr;2=XCharter
 # USEBIBER ?= # 0=bibtex8;1=biber
+# USEFOOTCITE ?= # 0=no;1=yes
+# BIBGROUPED ?= # 0=no;1=yes
 # IMGCOMPILE ?= # 1=on;0=off
 # NOTESON ?= # 0=off;1=on, separate slide;2=on, same slide
 # LATEXFLAGS ?= -halt-on-error -file-line-error
@@ -23,6 +25,7 @@
 # BIBERFLAGS ?= # --fixinits
 # REGEXDIRS ?= . Dissertation Synopsis Presentation # distclean dirs
 # TIMERON ?= # show CPU usage
+# TIKZFILE ?= # .tikz file for tikz rule
 
 ### Пользовательские правила
 

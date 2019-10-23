@@ -9,8 +9,21 @@
 \newcounter{showperssign}
 \newcounter{showsecrsign}
 \newcounter{showopplead}
-\newcounter{usefootcite}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter
+\@ifundefined{c@usefootcite}{
+  \newcounter{usefootcite}
+  \setcounter{usefootcite}{0}           % 0 --- два списка литературы, 1 --- список публикаций автора + цитирование других работ в сносках
+}{}
+\makeatother
+
+\makeatletter
+\@ifundefined{c@bibgrouped}{
+  \newcounter{bibgrouped}
+  \setcounter{bibgrouped}{0}           % 0 --- единый список работ автора, 1 --- сгруппированные работы автора
+}{}
+\makeatother
 
 %%% Область упрощённого управления оформлением %%%
 
@@ -46,6 +59,3 @@
 %\definecolor{linkcolor}{rgb}{0,0,0} %black
 %\definecolor{citecolor}{rgb}{0,0,0} %black
 %\definecolor{urlcolor}{rgb}{0,0,0} %black
-
-%%% Библиография
-\setcounter{usefootcite}{0}         % 0 --- два списка литературы, 1 --- список публикаций автора + цитирование других работ в сносках
