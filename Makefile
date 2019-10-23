@@ -144,9 +144,6 @@ distclean:
 	"$(MAKE)" SOURCE=synopsis TARGET=synopsis distclean-target
 	"$(MAKE)" SOURCE=presentation TARGET=presentation distclean-target
 
-# include after "all" rule
-include examples.mk
-
 .PHONY: all dissertation synopsis presentation dissertation-draft \
 synopsis-draft pdflatex draft synopsis-booklet presentation-booklet\
 release clean-target distclean-target clean distclean
