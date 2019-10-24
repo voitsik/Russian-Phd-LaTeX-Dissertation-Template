@@ -1,0 +1,12 @@
+/month/ s/jan/1/i
+/month/ s/feb/2/i
+/month/ s/mar/3/i
+/month/ s/apr/4/i
+/month/ s/may/5/i
+/month/ s/jun/6/i
+/month/ s/jul/7/i
+/month/ s/aug/8/i
+/month/ s/sep/9/i
+/month/ s/oct/10/i
+/month/ s/nov/11/i
+/month/ s/dec/12/i

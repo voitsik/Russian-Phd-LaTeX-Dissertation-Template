@@ -59,11 +59,13 @@ sorting=none,% настройка сортировки списка литера
 % Short Journal names
 \def\aj{AJ}%          % Astronomical Journal
 \def\apj{ApJ}%        % Astrophysical Journal
+\def\apjl{ApJL}       % Astrophysical Journal, Letters
 \def\araa{ARA\&A}%    % Annual Review of Astron and Astrophys
 \def\aap{A\&A}%       % Astronomy and Astrophysics
 \def\aapr{A\&A~Rev.}% % Astronomy and Astrophysics Reviews
 \def\aaps{A\&AS}%     % Astronomy and Astrophysics, Supplement
 \def\mnras{MNRAS}%    % Monthly Notices of the Royal Astronomical Society
+\def\pasa{PASA}%           % Publications of the Astron. Soc. of Australia
 
 
 %%% Подключение файлов bib %%%
@@ -97,16 +99,15 @@ sorting=none,% настройка сортировки списка литера
             \step[fieldset=booktitle, origfieldval]
             \step[fieldset=shortbooktitle, null]
         }
-        \map{% если в поле medium написано "Электронный ресурс", то устанавливаем поле media, которым пользуется biblatex, в значение eresource.
-            \step[fieldsource=medium,
-            match=\regexp{Электронный\s+ресурс},
-            final]
+        \map{% если в поле medium написано "Электронный ресурс", то устанавливаем поле media,
+             % которым пользуется biblatex, в значение eresource.
+            \step[fieldsource=medium, match=\regexp{Электронный\s+ресурс}, final]
             \step[fieldset=media, fieldvalue=eresource]
             \step[fieldset=medium, null]
         }
-        \map{% использование media=text по умолчанию
-            \step[fieldset=media, fieldvalue=text]
-        }
+%         \map{% использование media=text по умолчанию
+%             \step[fieldset=media, fieldvalue=text]
+%         }
         \map[overwrite]{% стираем значения всех полей issn
             \step[fieldset=issn, null]
         }
