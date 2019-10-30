@@ -97,7 +97,7 @@ Mode Set By User=false
 [document-settings,item:Dissertation/references.tex]
 Bookmarks=
 Encoding=UTF-8
-Highlighting=LaTeX
+Highlighting=None
 Highlighting Set By User=false
 Indentation Mode=normal
 Mode=LaTeX
@@ -166,6 +166,15 @@ Indentation Mode=normal
 Mode=LaTeX
 Mode Set By User=false
 
+[document-settings,item:biblio/author.bib]
+Bookmarks=
+Encoding=UTF-8
+Highlighting=BibTeX
+Highlighting Set By User=false
+Indentation Mode=normal
+Mode=BibTeX
+Mode Set By User=false
+
 [document-settings,item:biblio/authorpapersVAK.bib]
 Bookmarks=
 Encoding=UTF-8
@@ -184,10 +193,19 @@ Indentation Mode=normal
 Mode=LaTeX
 Mode Set By User=false
 
-[document-settings,item:biblio/othercites.bib]
+[document-settings,item:biblio/external.bib]
 Bookmarks=
 Encoding=UTF-8
 Highlighting=BibTeX
+Highlighting Set By User=false
+Indentation Mode=normal
+Mode=BibTeX
+Mode Set By User=false
+
+[document-settings,item:biblio/othercites.bib]
+Bookmarks=
+Encoding=UTF-8
+Highlighting=None
 Highlighting Set By User=false
 Indentation Mode=normal
 Mode=BibTeX
@@ -239,6 +257,15 @@ Mode=LaTeX
 Mode Set By User=false
 
 [document-settings,item:common/packages.tex]
+Bookmarks=
+Encoding=UTF-8
+Highlighting=LaTeX
+Highlighting Set By User=false
+Indentation Mode=normal
+Mode=LaTeX
+Mode Set By User=false
+
+[document-settings,item:common/references.tex]
 Bookmarks=
 Encoding=UTF-8
 Highlighting=LaTeX
@@ -302,7 +329,7 @@ order=14
 
 [item:Dissertation/conclusion.tex]
 open=false
-order=22
+order=8
 
 [item:Dissertation/contents.tex]
 open=false
@@ -318,11 +345,11 @@ order=-1
 
 [item:Dissertation/disstyles.tex]
 open=false
-order=4
+order=12
 
 [item:Dissertation/introduction.tex]
-open=true
-order=3
+open=false
+order=1
 
 [item:Dissertation/lists.tex]
 open=false
@@ -330,18 +357,18 @@ order=-1
 
 [item:Dissertation/part1.tex]
 open=true
-order=4
+order=0
 
 [item:Dissertation/part2.tex]
 open=true
-order=7
+order=1
 
 [item:Dissertation/part3.tex]
 open=true
-order=8
+order=2
 
 [item:Dissertation/references.tex]
-open=true
+open=false
 order=6
 
 [item:Dissertation/setup.tex]
@@ -361,24 +388,32 @@ open=false
 order=4
 
 [item:Synopsis/content.tex]
-open=true
+open=false
 order=14
 
 [item:Synopsis/setup.tex]
-open=true
+open=false
 order=13
 
 [item:Synopsis/title.tex]
 open=false
 order=-1
 
+[item:biblio/author.bib]
+open=false
+order=9
+
 [item:biblio/authorpapersVAK.bib]
 open=true
 order=10
 
 [item:biblio/biblatex.tex]
-open=true
-order=11
+open=false
+order=5
+
+[item:biblio/external.bib]
+open=false
+order=10
 
 [item:biblio/othercites.bib]
 open=true
@@ -386,14 +421,14 @@ order=15
 
 [item:common/characteristic.tex]
 open=false
-order=1
+order=6
 
 [item:common/concl.tex]
-open=true
+open=false
 order=2
 
 [item:common/data.tex]
-open=true
+open=false
 order=1
 
 [item:common/fonts.tex]
@@ -401,15 +436,19 @@ open=false
 order=21
 
 [item:common/newnames.tex]
-open=true
+open=false
 order=5
 
 [item:common/packages.tex]
 open=false
-order=20
+order=11
+
+[item:common/references.tex]
+open=false
+order=7
 
 [item:common/renames.tex]
-open=true
+open=false
 order=9
 
 [item:common/setup.tex]
@@ -425,11 +464,11 @@ open=false
 order=-1
 
 [item:dissertation.tex]
-open=true
+open=false
 order=0
 
 [item:synopsis.tex]
-open=true
+open=false
 order=12
 
 [view-settings,view=0,item:Dissertation/acronyms.tex]
@@ -447,11 +486,12 @@ TextFolding=[]
 ViMarks=
 
 [view-settings,view=0,item:Dissertation/conclusion.tex]
-CursorColumn=7
+CursorColumn=3
 CursorLine=9
+Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,0,0,[,0,0,],0,0
+ViMarks=.,8,92,[,8,92,],8,92
 
 [view-settings,view=0,item:Dissertation/contents.tex]
 CursorColumn=0
@@ -468,15 +508,16 @@ TextFolding=[]
 ViMarks=
 
 [view-settings,view=0,item:Dissertation/disstyles.tex]
-CursorColumn=31
-CursorLine=41
+CursorColumn=0
+CursorLine=0
+Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,8,56,[,8,30,],8,56
+ViMarks=.,23,30,[,23,30,],23,30
 
 [view-settings,view=0,item:Dissertation/introduction.tex]
-CursorColumn=26
-CursorLine=20
+CursorColumn=0
+CursorLine=19
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
@@ -484,35 +525,35 @@ ViMarks=.,0,0,[,0,0,],0,0
 
 [view-settings,view=0,item:Dissertation/part1.tex]
 CursorColumn=0
-CursorLine=4
+CursorLine=27
+Dynamic Word Wrap=false
+JumpList=
+TextFolding=[]
+ViMarks=.,36,32,[,36,31,],36,32
+
+[view-settings,view=0,item:Dissertation/part2.tex]
+CursorColumn=0
+CursorLine=48
+Dynamic Word Wrap=false
+JumpList=
+TextFolding=[]
+ViMarks=.,27,35,[,27,33,],27,35
+
+[view-settings,view=0,item:Dissertation/part3.tex]
+CursorColumn=0
+CursorLine=12
+Dynamic Word Wrap=false
+JumpList=
+TextFolding=[]
+ViMarks=.,11,0,[,11,0,],-1,-1
+
+[view-settings,view=0,item:Dissertation/references.tex]
+CursorColumn=0
+CursorLine=0
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
 ViMarks=.,0,0,[,0,0,],0,0
-
-[view-settings,view=0,item:Dissertation/part2.tex]
-CursorColumn=0
-CursorLine=93
-Dynamic Word Wrap=false
-JumpList=
-TextFolding=[]
-ViMarks=.,0,0,[,0,0,],-1,-1
-
-[view-settings,view=0,item:Dissertation/part3.tex]
-CursorColumn=0
-CursorLine=9
-Dynamic Word Wrap=false
-JumpList=
-TextFolding=[]
-ViMarks=.,8,21,[,9,0,],-1,-1
-
-[view-settings,view=0,item:Dissertation/references.tex]
-CursorColumn=26
-CursorLine=7
-Dynamic Word Wrap=false
-JumpList=
-TextFolding=[]
-ViMarks=.,7,1,[,7,0,],7,1
 
 [view-settings,view=0,item:Dissertation/setup.tex]
 CursorColumn=24
@@ -545,58 +586,75 @@ ViMarks=
 
 [view-settings,view=0,item:Synopsis/content.tex]
 CursorColumn=0
-CursorLine=41
-Dynamic Word Wrap=false
-JumpList=
-TextFolding=[]
-ViMarks=.,60,0,[,60,0,],60,0
-
-[view-settings,view=0,item:Synopsis/setup.tex]
-CursorColumn=0
 CursorLine=0
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,36,26,[,36,26,],36,26
+ViMarks=.,0,0,[,0,0,],0,0
+
+[view-settings,view=0,item:Synopsis/setup.tex]
+CursorColumn=25
+CursorLine=40
+Dynamic Word Wrap=false
+JumpList=
+TextFolding=[]
+ViMarks=.,40,24,[,40,23,],40,24
 
 [view-settings,view=0,item:Synopsis/title.tex]
 CursorColumn=0
 CursorLine=0
+Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
 ViMarks=
 
-[view-settings,view=0,item:biblio/authorpapersVAK.bib]
-CursorColumn=24
-CursorLine=261
+[view-settings,view=0,item:biblio/author.bib]
+CursorColumn=17
+CursorLine=421
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,258,21,[,258,14,],258,21
+ViMarks=.,421,16,[,421,16,],421,16
+
+[view-settings,view=0,item:biblio/authorpapersVAK.bib]
+CursorColumn=22
+CursorLine=277
+Dynamic Word Wrap=false
+JumpList=
+TextFolding=[]
+ViMarks=.,276,40,[,276,40,],276,40
 
 [view-settings,view=0,item:biblio/biblatex.tex]
-CursorColumn=66
-CursorLine=82
+CursorColumn=9
+CursorLine=67
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,358,0,[,358,0,],358,0
+ViMarks=.,67,8,[,67,4,],67,8
+
+[view-settings,view=0,item:biblio/external.bib]
+CursorColumn=9
+CursorLine=445
+Dynamic Word Wrap=false
+JumpList=
+TextFolding=[]
+ViMarks=
 
 [view-settings,view=0,item:biblio/othercites.bib]
 CursorColumn=0
-CursorLine=480
+CursorLine=0
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,480,0,[,480,0,],480,0
+ViMarks=.,0,0,[,0,0,],0,0
 
 [view-settings,view=0,item:common/characteristic.tex]
-CursorColumn=26
-CursorLine=3
+CursorColumn=0
+CursorLine=94
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,92,83,[,92,83,],92,83
+ViMarks=.,89,32,[,89,32,],89,32
 
 [view-settings,view=0,item:common/concl.tex]
 CursorColumn=24
@@ -622,16 +680,25 @@ TextFolding=[]
 ViMarks=
 
 [view-settings,view=0,item:common/newnames.tex]
-CursorColumn=27
-CursorLine=30
+CursorColumn=0
+CursorLine=26
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
 ViMarks=
 
 [view-settings,view=0,item:common/packages.tex]
-CursorColumn=24
-CursorLine=52
+CursorColumn=20
+CursorLine=37
+Dynamic Word Wrap=false
+JumpList=
+TextFolding=[]
+ViMarks=.,37,19,[,37,0,],37,19
+
+[view-settings,view=0,item:common/references.tex]
+CursorColumn=0
+CursorLine=0
+Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
 ViMarks=
@@ -660,12 +727,12 @@ TextFolding=[]
 ViMarks=
 
 [view-settings,view=0,item:dissertation.tex]
-CursorColumn=9
-CursorLine=54
+CursorColumn=0
+CursorLine=61
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,34,51,[,28,0,],-1,-1
+ViMarks=.,0,0,[,0,0,],-1,-1
 
 [view-settings,view=0,item:synopsis.tex]
 CursorColumn=7

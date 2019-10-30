@@ -93,7 +93,7 @@ mode=LaTeX
 [item:Dissertation/references.tex]
 archive=true
 encoding=UTF-8
-highlight=LaTeX
+highlight=None
 mode=LaTeX
 
 [item:Dissertation/setup.tex]
@@ -138,7 +138,7 @@ encoding=UTF-8
 highlight=LaTeX
 mode=LaTeX
 
-[item:biblio/authorpapersVAK.bib]
+[item:biblio/author.bib]
 archive=true
 encoding=UTF-8
 highlight=BibTeX
@@ -150,7 +150,7 @@ encoding=UTF-8
 highlight=LaTeX
 mode=LaTeX
 
-[item:biblio/othercites.bib]
+[item:biblio/external.bib]
 archive=true
 encoding=UTF-8
 highlight=BibTeX
@@ -187,6 +187,12 @@ highlight=LaTeX
 mode=LaTeX
 
 [item:common/packages.tex]
+archive=true
+encoding=UTF-8
+highlight=LaTeX
+mode=LaTeX
+
+[item:common/references.tex]
 archive=true
 encoding=UTF-8
 highlight=LaTeX
