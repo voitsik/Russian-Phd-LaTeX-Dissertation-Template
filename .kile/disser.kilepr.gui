@@ -2,7 +2,7 @@
 kile_livePreviewEnabled=true
 kile_livePreviewStatusUserSpecified=true
 kile_livePreviewTool=LivePreview-PDFLaTeX
-lastDocument=Dissertation/part1.tex
+lastDocument=Dissertation/part2.tex
 
 [document-settings,item:Dissertation/acronyms.tex]
 Bookmarks=
@@ -464,8 +464,8 @@ open=false
 order=-1
 
 [item:dissertation.tex]
-open=false
-order=0
+open=true
+order=3
 
 [item:synopsis.tex]
 open=false
@@ -525,23 +525,23 @@ ViMarks=.,0,0,[,0,0,],0,0
 
 [view-settings,view=0,item:Dissertation/part1.tex]
 CursorColumn=0
-CursorLine=27
+CursorLine=4
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,36,32,[,36,31,],36,32
+ViMarks=.,4,0,[,4,0,],4,0
 
 [view-settings,view=0,item:Dissertation/part2.tex]
 CursorColumn=0
-CursorLine=48
+CursorLine=96
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,27,35,[,27,33,],27,35
+ViMarks=.,102,0,[,103,0,],-1,-1
 
 [view-settings,view=0,item:Dissertation/part3.tex]
 CursorColumn=0
-CursorLine=12
+CursorLine=11
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
@@ -728,7 +728,7 @@ ViMarks=
 
 [view-settings,view=0,item:dissertation.tex]
 CursorColumn=0
-CursorLine=61
+CursorLine=67
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
