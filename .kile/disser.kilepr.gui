@@ -464,7 +464,7 @@ open=false
 order=-1
 
 [item:dissertation.tex]
-open=true
+open=false
 order=3
 
 [item:synopsis.tex]
@@ -533,11 +533,11 @@ ViMarks=.,4,0,[,4,0,],4,0
 
 [view-settings,view=0,item:Dissertation/part2.tex]
 CursorColumn=0
-CursorLine=96
+CursorLine=88
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,102,0,[,103,0,],-1,-1
+ViMarks=.,41,0,[,41,0,],41,0
 
 [view-settings,view=0,item:Dissertation/part3.tex]
 CursorColumn=0

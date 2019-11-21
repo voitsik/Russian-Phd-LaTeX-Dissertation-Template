@@ -25,9 +25,16 @@ isbn=false,% Показывать или нет ISBN, ISSN, ISRN
 backend=biber,% движок
 bibencoding=utf8,% кодировка bib файла
 sorting=none,% настройка сортировки списка литературы
+% defernumbers=true, % откомментируйте, если требуется правильная нумерация ссылок на литературу в режиме черновика. Замедляет сборку
 ]{biblatex}[2016/09/17]%
 }
 \makeatother
+
+\ifxetexorluatex
+\else
+% Исправление случая неподдержки знака номера в pdflatex
+    \DefineBibliographyStrings{russian}{number={\textnumero}}
+\fi
 
 \ifsynopsis
 \ifnumgreater{\value{usefootcite}}{0}{
@@ -89,12 +96,14 @@ sorting=none,% настройка сортировки списка литера
             \step[fieldsource=pagestotal, fieldset=pagetotal, origfieldval, final]
             \step[fieldset=pagestotal, null]
         }
-        \map[overwrite]{% перекидываем значения полей shortjournal, если они есть, в поля journal, которыми пользуется biblatex
+        \map[overwrite]{% перекидываем значения полей shortjournal, если они есть, в поля journal,
+                        % которыми пользуется biblatex
             \step[fieldsource=shortjournal, final]
             \step[fieldset=journal, origfieldval]
             \step[fieldset=shortjournal, null]
         }
-        \map[overwrite]{% перекидываем значения полей shortbooktitle, если они есть, в поля booktitle, которыми пользуется biblatex
+        \map[overwrite]{% перекидываем значения полей shortbooktitle, если они есть,
+                        % в поля booktitle, которыми пользуется biblatex
             \step[fieldsource=shortbooktitle, final]
             \step[fieldset=booktitle, origfieldval]
             \step[fieldset=shortbooktitle, null]
@@ -111,7 +120,8 @@ sorting=none,% настройка сортировки списка литера
         \map[overwrite]{% стираем значения всех полей issn
             \step[fieldset=issn, null]
         }
-        \map[overwrite]{% стираем значения всех полей abstract, поскольку ими не пользуемся, а там бывают "неприятные" латеху символы
+        \map[overwrite]{% стираем значения всех полей abstract, поскольку ими не пользуемся,
+                        % а там бывают "неприятные" латеху символы
             \step[fieldsource=abstract]
             \step[fieldset=abstract,null]
         }
