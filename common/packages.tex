@@ -1,5 +1,4 @@
 %%% Проверка используемого TeX-движка %%%
-\RequirePackage{ifxetex, ifluatex}
 \newif\ifxetexorluatex   % определяем новый условный оператор (http://tex.stackexchange.com/a/47579)
 \ifxetex
     \xetexorluatextrue
@@ -11,14 +10,14 @@
     \fi
 \fi
 
-\newif\ifsynopsis  % Условие, проверяющее, что документ --- автореферат
+\newif\ifsynopsis           % Условие, проверяющее, что документ --- автореферат
 
-\RequirePackage{etoolbox}[2015/08/02]  % Для продвинутой проверки разных условий
+\usepackage{etoolbox}[2015/08/02]               % Для продвинутой проверки разных условий
 \providebool{presentation}
 
 %%% Поля и разметка страницы %%%
-\usepackage{pdflscape}                 % Для включения альбомных страниц
-\usepackage{geometry}                  % Для последующего задания полей
+\usepackage{pdflscape}                              % Для включения альбомных страниц
+\usepackage{geometry}                               % Для последующего задания полей
 
 %%% Математические пакеты %%%
 \usepackage{amsthm,amsmath,amscd}   % Математические дополнения от AMS
@@ -98,8 +97,11 @@
 \fi
 
 %%% Таблицы %%%
-\usepackage{longtable,ltcaption}                    % Длинные таблицы
-\usepackage{multirow,makecell}                      % Улучшенное форматирование таблиц
+\usepackage{longtable,ltcaption} % Длинные таблицы
+\usepackage{multirow,makecell}   % Улучшенное форматирование таблиц
+\usepackage{tabu, tabulary}      % таблицы с автоматически подбирающейся
+                                 % шириной столбцов (tabu обязательно
+                                 % до hyperref вызывать)
 
 %%% Общее форматирование
 \usepackage{soulutf8}                               % Поддержка переносоустойчивых подчёркиваний и зачёркиваний
@@ -183,7 +185,7 @@
         % Предполагается, что в следующей версии класс будет исправлен
         \typeout{Assuming this version of memoir is free from the jumping-to-caption bug.}
     }{
-        \RequirePackage{xpatch}
+        \usepackage{xpatch}
 
         \newcommand\mem@step@subcounter{\refstepcounter{sub\@captype}\@contkeep}
 
