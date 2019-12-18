@@ -412,8 +412,8 @@ open=false
 order=5
 
 [item:biblio/external.bib]
-open=false
-order=10
+open=true
+order=4
 
 [item:biblio/othercites.bib]
 open=true
@@ -440,8 +440,8 @@ open=false
 order=5
 
 [item:common/packages.tex]
-open=false
-order=11
+open=true
+order=5
 
 [item:common/references.tex]
 open=false
@@ -524,8 +524,8 @@ TextFolding=[]
 ViMarks=.,0,0,[,0,0,],0,0
 
 [view-settings,view=0,item:Dissertation/part1.tex]
-CursorColumn=0
-CursorLine=26
+CursorColumn=55
+CursorLine=962
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
@@ -533,11 +533,11 @@ ViMarks=.,4,0,[,4,0,],4,0
 
 [view-settings,view=0,item:Dissertation/part2.tex]
 CursorColumn=0
-CursorLine=89
+CursorLine=204
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,91,0,[,92,0,],-1,-1
+ViMarks=.,206,53,[,206,53,],206,53
 
 [view-settings,view=0,item:Dissertation/part3.tex]
 CursorColumn=0
@@ -572,7 +572,7 @@ ViMarks=
 
 [view-settings,view=0,item:Dissertation/userpackages.tex]
 CursorColumn=0
-CursorLine=0
+CursorLine=45
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
@@ -634,12 +634,12 @@ TextFolding=[]
 ViMarks=.,104,84,[,104,84,],104,84
 
 [view-settings,view=0,item:biblio/external.bib]
-CursorColumn=9
-CursorLine=445
+CursorColumn=14
+CursorLine=481
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=
+ViMarks=.,485,91,[,485,91,],485,91
 
 [view-settings,view=0,item:biblio/othercites.bib]
 CursorColumn=0
@@ -689,7 +689,7 @@ TextFolding=[]
 ViMarks=
 
 [view-settings,view=0,item:common/packages.tex]
-CursorColumn=20
+CursorColumn=13
 CursorLine=37
 Dynamic Word Wrap=false
 JumpList=
