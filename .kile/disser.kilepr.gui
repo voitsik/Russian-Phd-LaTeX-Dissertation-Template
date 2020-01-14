@@ -440,7 +440,7 @@ open=false
 order=5
 
 [item:common/packages.tex]
-open=true
+open=false
 order=5
 
 [item:common/references.tex]
@@ -533,11 +533,11 @@ ViMarks=.,4,0,[,4,0,],4,0
 
 [view-settings,view=0,item:Dissertation/part2.tex]
 CursorColumn=0
-CursorLine=204
+CursorLine=259
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,206,53,[,206,53,],206,53
+ViMarks=.,257,78,[,257,78,],257,78
 
 [view-settings,view=0,item:Dissertation/part3.tex]
 CursorColumn=0
@@ -611,11 +611,11 @@ ViMarks=
 
 [view-settings,view=0,item:biblio/author.bib]
 CursorColumn=0
-CursorLine=254
+CursorLine=15
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,251,92,[,251,92,],251,92
+ViMarks=.,3,0,[,3,0,],3,0
 
 [view-settings,view=0,item:biblio/authorpapersVAK.bib]
 CursorColumn=22
@@ -655,7 +655,7 @@ CursorLine=94
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,89,32,[,89,32,],89,32
+ViMarks=.,87,21,[,87,18,],87,21
 
 [view-settings,view=0,item:common/concl.tex]
 CursorColumn=24
