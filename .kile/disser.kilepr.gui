@@ -524,8 +524,8 @@ TextFolding=[]
 ViMarks=.,0,0,[,0,0,],0,0
 
 [view-settings,view=0,item:Dissertation/part1.tex]
-CursorColumn=55
-CursorLine=962
+CursorColumn=32
+CursorLine=388
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
@@ -533,11 +533,11 @@ ViMarks=.,4,0,[,4,0,],4,0
 
 [view-settings,view=0,item:Dissertation/part2.tex]
 CursorColumn=0
-CursorLine=259
+CursorLine=1403
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,257,78,[,257,78,],257,78
+ViMarks=.,1401,100,[,1401,100,],1401,100
 
 [view-settings,view=0,item:Dissertation/part3.tex]
 CursorColumn=0
@@ -610,8 +610,8 @@ TextFolding=[]
 ViMarks=
 
 [view-settings,view=0,item:biblio/author.bib]
-CursorColumn=0
-CursorLine=15
+CursorColumn=27
+CursorLine=21
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
@@ -626,20 +626,20 @@ TextFolding=[]
 ViMarks=.,276,40,[,276,40,],276,40
 
 [view-settings,view=0,item:biblio/biblatex.tex]
-CursorColumn=26
-CursorLine=105
+CursorColumn=0
+CursorLine=78
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,104,84,[,104,84,],104,84
+ViMarks=.,77,5,[,77,5,],77,5
 
 [view-settings,view=0,item:biblio/external.bib]
-CursorColumn=14
-CursorLine=481
+CursorColumn=1
+CursorLine=822
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,485,91,[,485,91,],485,91
+ViMarks=.,801,17,[,801,17,],801,22
 
 [view-settings,view=0,item:biblio/othercites.bib]
 CursorColumn=0
@@ -698,7 +698,7 @@ ViMarks=.,37,19,[,37,0,],37,19
 
 [view-settings,view=0,item:common/references.tex]
 CursorColumn=0
-CursorLine=0
+CursorLine=12
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
@@ -729,7 +729,7 @@ ViMarks=
 
 [view-settings,view=0,item:dissertation.tex]
 CursorColumn=0
-CursorLine=54
+CursorLine=0
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
