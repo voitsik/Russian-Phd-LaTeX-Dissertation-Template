@@ -1,8 +1,8 @@
 [General]
 kile_livePreviewEnabled=true
 kile_livePreviewStatusUserSpecified=true
-kile_livePreviewTool=LivePreview-PDFLaTeX
-lastDocument=Dissertation/part3.tex
+kile_livePreviewTool=LivePreview-XeLaTeX
+lastDocument=Dissertation/part1.tex
 
 [document-settings,item:Dissertation/acronyms.tex]
 Bookmarks=
@@ -503,17 +503,18 @@ ViMarks=
 [view-settings,view=0,item:Dissertation/dispackages.tex]
 CursorColumn=0
 CursorLine=0
+Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
 ViMarks=
 
 [view-settings,view=0,item:Dissertation/disstyles.tex]
 CursorColumn=0
-CursorLine=18
+CursorLine=12
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,52,89,[,52,89,],52,89
+ViMarks=.,12,0,[,12,0,],12,0
 
 [view-settings,view=0,item:Dissertation/introduction.tex]
 CursorColumn=0
@@ -525,27 +526,27 @@ ViMarks=.,0,0,[,0,0,],0,0
 
 [view-settings,view=0,item:Dissertation/part1.tex]
 CursorColumn=0
-CursorLine=1153
+CursorLine=1067
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,24,66,[,24,66,],24,66
+ViMarks=.,486,38,[,486,37,],486,38
 
 [view-settings,view=0,item:Dissertation/part2.tex]
-CursorColumn=23
-CursorLine=1426
+CursorColumn=0
+CursorLine=1740
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,1820,94,[,1820,94,],1820,94
+ViMarks=.,252,81,[,252,81,],252,81
 
 [view-settings,view=0,item:Dissertation/part3.tex]
 CursorColumn=0
-CursorLine=370
+CursorLine=10
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,369,0,[,370,0,],-1,-1
+ViMarks=.,815,55,[,815,55,],815,80
 
 [view-settings,view=0,item:Dissertation/references.tex]
 CursorColumn=0
@@ -611,12 +612,12 @@ TextFolding=[]
 ViMarks=.,77,0,[,77,0,],77,1
 
 [view-settings,view=0,item:biblio/author.bib]
-CursorColumn=5
-CursorLine=248
+CursorColumn=83
+CursorLine=352
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,248,5,[,248,5,],248,5
+ViMarks=.,352,82,[,352,82,],352,82
 
 [view-settings,view=0,item:biblio/authorpapersVAK.bib]
 CursorColumn=22
@@ -627,20 +628,20 @@ TextFolding=[]
 ViMarks=.,276,40,[,276,40,],276,40
 
 [view-settings,view=0,item:biblio/biblatex.tex]
-CursorColumn=0
-CursorLine=78
+CursorColumn=12
+CursorLine=17
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,77,5,[,77,5,],77,5
+ViMarks=.,17,0,[,16,0,],17,11
 
 [view-settings,view=0,item:biblio/external.bib]
-CursorColumn=39
-CursorLine=1437
+CursorColumn=20
+CursorLine=1812
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,1437,39,[,1437,39,],1437,39
+ViMarks=.,1871,5,[,1871,5,],1871,5
 
 [view-settings,view=0,item:biblio/othercites.bib]
 CursorColumn=0
@@ -677,6 +678,7 @@ ViMarks=.,47,65,[,47,65,],47,65
 [view-settings,view=0,item:common/fonts.tex]
 CursorColumn=0
 CursorLine=0
+Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
 ViMarks=
@@ -690,8 +692,8 @@ TextFolding=[]
 ViMarks=
 
 [view-settings,view=0,item:common/packages.tex]
-CursorColumn=34
-CursorLine=32
+CursorColumn=16
+CursorLine=59
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
@@ -714,8 +716,8 @@ TextFolding=[]
 ViMarks=
 
 [view-settings,view=0,item:common/setup.tex]
-CursorColumn=31
-CursorLine=37
+CursorColumn=23
+CursorLine=4
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
@@ -730,7 +732,7 @@ ViMarks=
 
 [view-settings,view=0,item:dissertation.tex]
 CursorColumn=0
-CursorLine=73
+CursorLine=51
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
