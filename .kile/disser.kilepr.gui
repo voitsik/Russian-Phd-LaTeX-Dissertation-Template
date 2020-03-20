@@ -400,7 +400,7 @@ open=false
 order=-1
 
 [item:biblio/author.bib]
-open=true
+open=false
 order=3
 
 [item:biblio/authorpapersVAK.bib]
@@ -412,7 +412,7 @@ open=false
 order=5
 
 [item:biblio/external.bib]
-open=true
+open=false
 order=4
 
 [item:biblio/othercites.bib]
@@ -541,12 +541,12 @@ TextFolding=[]
 ViMarks=.,252,81,[,252,81,],252,81
 
 [view-settings,view=0,item:Dissertation/part3.tex]
-CursorColumn=0
-CursorLine=1752
+CursorColumn=89
+CursorLine=2013
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,1878,99,[,1878,99,],1878,99
+ViMarks=.,2012,98,[,2012,98,],2012,98
 
 [view-settings,view=0,item:Dissertation/references.tex]
 CursorColumn=0
