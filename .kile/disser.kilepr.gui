@@ -1,5 +1,5 @@
 [General]
-kile_livePreviewEnabled=false
+kile_livePreviewEnabled=true
 kile_livePreviewStatusUserSpecified=true
 kile_livePreviewTool=LivePreview-XeLaTeX
 lastDocument=Dissertation/part3.tex
@@ -541,12 +541,12 @@ TextFolding=[]
 ViMarks=.,252,81,[,252,81,],252,81
 
 [view-settings,view=0,item:Dissertation/part3.tex]
-CursorColumn=0
-CursorLine=2496
+CursorColumn=62
+CursorLine=2549
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,2499,100,[,2499,100,],2499,100
+ViMarks=.,2550,46,[,2549,94,],2550,56
 
 [view-settings,view=0,item:Dissertation/references.tex]
 CursorColumn=0
@@ -636,12 +636,12 @@ TextFolding=[]
 ViMarks=.,17,0,[,16,0,],17,11
 
 [view-settings,view=0,item:biblio/external.bib]
-CursorColumn=22
-CursorLine=3159
+CursorColumn=20
+CursorLine=3137
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,3164,97,[,3164,97,],3164,97
+ViMarks=.,3302,95,[,3302,95,],3302,95
 
 [view-settings,view=0,item:biblio/othercites.bib]
 CursorColumn=0
