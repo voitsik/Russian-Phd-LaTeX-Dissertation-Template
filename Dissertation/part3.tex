@@ -2517,8 +2517,7 @@ $T_\text{b} \sim \SI{e11.5}{\kelvin}$ требуется $\delta \sim \text{20--
 необоснованным.
 
 
-\section{The extreme blazar AO\,0235+164 as seen by extensive ground and space
-radio observations}
+\section{The extreme blazar AO 0235+164 as seen by extensive ground and space radio observations}
 
 \subsection{Введение}
 
@@ -2583,7 +2582,120 @@ radio observations}
 \cite{Rickett_2006}. Эти блобы, в свою очередь, могут быть ответственны за чрезвычайно высокие
 яркостные температуры в источнике.
 
-В этой статье мы анализируем как РСДБ, в том числе данные миссии РадиоАстрон, так и
-радионаблюдения полного потока 0235+164 на одиночных телескопах, чтобы измерить многочастотные
-временные задержки и размер ядра, вывести яркостную температуру и Доплер-фактор, изучить
-структуру струи и оценить её физические и геометрические параметры.
+В этой статье мы анализируем как РСДБ, в том числе данные миссии РадиоАстрон, так и радионаблюдения
+полного потока 0235+164 на одиночных телескопах, чтобы измерить многочастотные временные задержки и
+размер ядра, вывести яркостную температуру и Доплер-фактор, изучить структуру струи и оценить её
+физические и геометрические параметры.
+
+\subsection{Наблюдательные данные}
+
+\subsubsection{Наблюдения РадиоАстрона}
+
+Блазар 0235+164 является целью обзора AGN на РадиоАстроне (Ковалев и др. в стадии подготовки). Он
+регулярно наблюдается на частотах 1.6, 4.8 и \SI{22.2}{\GHz} антенной космического радиотелескопа, а
+также наземными телескопами в интерферометрическом режиме. Типичная наблюдательная сессия длится
+40--60~мин и выполняется либо в одной полосе с двумя круговыми поляризациями, либо в двух полосах с
+одной круговой поляризацией. Корреляция проводилась в Астрокосмическом центре с использованием
+программного коррелятора \cite{Kardashev_2013_rus,Likhachev_2017}. Посткорреляционная обработка
+(подгонка лепестков, калибровка) выполнялась с использованием программного обеспечения PIMA
+\cite{Petrov_2011}. Мы проанализировали 12 эпох наблюдения с декабря 2012 года по январь 2016 года,
+как показано в таблице~\ref{tab:0235_ra}.
+
+\begin{table}
+	\renewcommand{\arraystretch}{1.5}
+	\caption{\textit{RadioAstron} observations of 0235+164. Columns are: (1) Date, (2) Band, (3)
+Projected baseline (in Earth diameters), (4) Lower limit of brightness temperature, (5) Estimate of
+the apparent brightness temperature in the source frame, (6) Estimate of circular Gaussian component
+size.}
+	\label{tab:0235_ra}
+	\centering
+	\begin{SingleSpace}
+	\begin{tabular}{{c}|{c}|{c}|{c}|{c}|{c}}
+		\toprule
+		Date & $\nu$ & $D/D_\oplus$ & $T_\mathrm{b}^\mathrm{min}$ & $T_\mathrm{b}^\mathrm{Gaus}$ &
+$W$ \\
+		& (GHz) & & (K) & (K) & (\si{\uas}) \\
+		(1) & (2) & (3) & (4) & (5) & (6) \\
+		\midrule
+		2012-12-13 & 5 & 7.7 & $ 3.6\times10^{12} $ & $ 6.9\times10^{12} $ & 111.8 \\
+		2012-12-15 & 5 & 14.9 & $ 3.8\times10^{12} $ & $ 1.9\times10^{13} $  & 71.4\\
+		2012-12-15 & 22 & 14.8 & $ 1.6\times10^{13} $ & $ 3.8\times10^{13} $  & 13.3\\
+		2012-12-16 & 5 & 18.7 & $ 8.4\times10^{12} $ & $ 3.2\times10^{13} $  & 54.4\\
+		2013-08-27 & 5 & 2.2 & $ 6.9\times10^{11} $ & $1.0\times10^{12}$  & 376.2\\
+		2013-08-27 & 1.7 & 2.8 & $ 2.3\times10^{12} $ & $ 2.4\times10^{12} $ & 457.3\\
+		2015-01-15 & 1.7 & 19.8 & $ 2.9\times10^{12} $ & $ 2.0\times10^{13} $ & 164.4\\
+		2015-12-16 & 5 & 8.7 & $ 1.1\times10^{13} $ & $ 1.8\times10^{13} $  & 95.7\\
+		2015-12-17 & 5 & 16.4 & $ 1.4\times10^{13} $ & $ 5.9\times10^{13} $  & 63.1\\
+		2015-12-29 & 5 & 25.5 & $ 1.4\times10^{13} $ & $ 9.2\times10^{13} $  & 43.3\\
+		2016-01-09 & 5 & 14.5 & $ 1.8\times10^{13} $ & $ 4.1\times10^{13} $  & 62.0\\
+		2016-01-29 & 5 & 8.9 & $ 6.4\times10^{12} $ & $ 1.8\times10^{13} $  & 104.6\\
+		\bottomrule
+	\end{tabular}
+    \end{SingleSpace}
+\end{table}
+
+\subsection{Яркостная температура и Доплер-фактор}
+
+\subsubsection{Данные РадиоАстрона}
+
+Мы оцениваем нижний предел наблюдаемой яркостной температуры $T_\text{b}^\text{min}$ в системе
+отсчёта источника, предполагая, что распределение яркости имеет круговой гауссов профиль
+\cite{Lobanov_2015a}:
+\begin{equation}
+T_\mathrm{b}^\mathrm{min} = \frac{\pi e}{2k_B} L^2 V_L \approx 3.09 \mathrm{K}
+\left(\frac{L}{\mathrm{km}}\right)^2\left(\frac{V_L}{\mathrm{mJy}}\right) (1+z)\,,
+\end{equation}
+где $k_\text{B}$~"--- постоянная Больцмана, $L$~"--- проекция базы, $V_L$~"--- амплитуда
+видности, измеренная на этой базе. Неопределенность амплитуды видности оценивается на
+основе статистического (теплового) шума данных, а также ошибок калибровки амплитуды. Для последнего
+мы принимаем типичное 10-процентное значение \cite{Kovalev_2014_rus}. $T_\text{b}^\text{min}$
+следует рассматривать как наиболее консервативный предел, который может быть достигнут для данной
+амплитуды видности. Кроме того, мы получаем размер $W$ из моделирования амплитуд видности на
+наземно-наземных и наземно-космических базах с круговым гауссовым профилем и оцениваем
+соответствующую яркостную температуру $T_\text{b}^\text{Gaus}$ (см. уравнения 1 и 2 в
+\cite{Lobanov_2015a}). Отметим, что $T_\text{b}^\text{Gaus}$ также может рассматриваться как менее
+строгий нижний предел, поскольку реальный размер компонента не может превышать оценку $W$ (см.
+ниже). Нижний предел $T_\text{b}^\text{min}$, оценка $T_\text{b}^\text{Gaus}$ и размер $W$ показаны
+в столбцах 5 и 6 таблицы~\ref{tab:0235_ra}.
+
+\begin{figure}
+\centerfloat{
+  \includegraphics[width=\textwidth,trim=0cm 1cm 0cm 0cm]{0235_tb.pdf}
+}
+\caption{Видимая яркостная температура, полученная по наблюдениям VLBA на \SI{43}{\GHz} и
+РадиоАстрона на 1.7, 5 и \SI{22}{\GHz}. Стрелками отмечены $T_\text{b}$, оцененные с
+использованием пределов разрешения. Кривая показывает плотность потока ядра на \SI{43}{\GHz}
+(правая ось).}
+\label{fig:0235_Tb_core_flux}
+\end{figure}
+
+Самая высокая оценка яркостной температуры получена от детектирования лепестка на базе 26 диаметров
+Земли на частоте \SI{5}{\GHz}. Самая длинная проекция базы в единицах длин волн \SI{14}{\giga\la}
+достигнута на \SI{22}{\GHz}. Средняя видимая яркостная температура, измеренная на РадиоАстроне,
+примерно на порядок выше, чем измеренная на VLBA (рис.~\ref{fig:0235_Tb_core_flux}). Оценки
+$T_\text{b}^\text{Gaus}$ и даже консервативные нижние предельные значения $T_\text{b}^\text{min}$
+бросают вызов обратному комптоновскому пределу даже после поправки на усиление высоким значением
+$\delta \approx 20$.
+
+\begin{figure}
+\centerfloat{
+	\includegraphics[width=0.7\columnwidth,trim=0cm 1cm 0cm 0cm]{0235_size_ra.pdf}
+}
+\caption{The source angular size estimated by fitting \textit{RadioAstron} visibility
+amplitudes
+at 5\,GHz (circles, Table~\ref{tab:0235_ra}). The square marks the size of the core at 5\,GHz from
+ground-based VLBA measurements (Table~\ref{tab:difmap_models}).}
+	\label{fig:0235_size_ra}
+\end{figure}
+
+\begin{figure}
+\centerfloat{
+	\includegraphics[width=0.7\columnwidth,trim=0cm 1cm 0cm 0cm]{0235_tb_ra.pdf}
+}
+\caption{The apparent brightness temperature $T_\mathrm{b}^\mathrm{Gaus}$ measured by
+\textit{RadioAstron} vs.\ the baseline (Table~\ref{tab:0235_ra}). Diamonds, circles, and the star
+represent $T_\mathrm{b}$ measured at 1.7, 5, and, 22~GHz, respectively. The square marks median
+$T_\mathrm{b}$ measured by \SI{43}{\GHz} VLBA.}
+	\label{fig:0235_tb_ra}
+\end{figure}
+
