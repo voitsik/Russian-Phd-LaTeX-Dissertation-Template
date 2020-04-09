@@ -357,15 +357,15 @@ order=-1
 
 [item:Dissertation/part1.tex]
 open=true
-order=0
+order=1
 
 [item:Dissertation/part2.tex]
 open=true
-order=1
+order=2
 
 [item:Dissertation/part3.tex]
 open=true
-order=2
+order=0
 
 [item:Dissertation/references.tex]
 open=false
@@ -541,12 +541,12 @@ TextFolding=[]
 ViMarks=.,252,81,[,252,81,],252,81
 
 [view-settings,view=0,item:Dissertation/part3.tex]
-CursorColumn=54
-CursorLine=2878
+CursorColumn=73
+CursorLine=3021
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,2875,24,[,2875,24,],2875,31
+ViMarks=.,3024,94,[,3024,94,],3024,94
 
 [view-settings,view=0,item:Dissertation/references.tex]
 CursorColumn=0
@@ -636,12 +636,12 @@ TextFolding=[]
 ViMarks=.,17,0,[,16,0,],17,11
 
 [view-settings,view=0,item:biblio/external.bib]
-CursorColumn=17
-CursorLine=3885
+CursorColumn=0
+CursorLine=4007
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,3889,96,[,3889,96,],3889,96
+ViMarks=.,4005,5,[,4005,5,],4005,5
 
 [view-settings,view=0,item:biblio/othercites.bib]
 CursorColumn=0
