@@ -2,7 +2,7 @@
 kile_livePreviewEnabled=true
 kile_livePreviewStatusUserSpecified=true
 kile_livePreviewTool=LivePreview-XeLaTeX
-lastDocument=Synopsis/content.tex
+lastDocument=Dissertation/part3.tex
 
 [document-settings,item:Dissertation/acronyms.tex]
 Bookmarks=
@@ -348,8 +348,8 @@ open=false
 order=12
 
 [item:Dissertation/introduction.tex]
-open=false
-order=1
+open=true
+order=5
 
 [item:Dissertation/lists.tex]
 open=false
@@ -389,7 +389,7 @@ order=4
 
 [item:Synopsis/content.tex]
 open=true
-order=5
+order=4
 
 [item:Synopsis/setup.tex]
 open=false
@@ -420,7 +420,7 @@ open=true
 order=15
 
 [item:common/characteristic.tex]
-open=true
+open=false
 order=4
 
 [item:common/concl.tex]
@@ -518,31 +518,31 @@ ViMarks=.,12,0,[,12,0,],12,0
 
 [view-settings,view=0,item:Dissertation/introduction.tex]
 CursorColumn=0
-CursorLine=19
+CursorLine=29
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,0,0,[,0,0,],0,0
+ViMarks=.,27,47,[,27,47,],27,47
 
 [view-settings,view=0,item:Dissertation/part1.tex]
 CursorColumn=0
-CursorLine=1182
+CursorLine=828
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,486,38,[,486,37,],486,38
+ViMarks=.,264,32,[,264,32,],264,36
 
 [view-settings,view=0,item:Dissertation/part2.tex]
 CursorColumn=0
-CursorLine=0
+CursorLine=711
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,252,81,[,252,81,],252,81
+ViMarks=.,1257,14,[,1257,14,],1257,18
 
 [view-settings,view=0,item:Dissertation/part3.tex]
 CursorColumn=0
-CursorLine=665
+CursorLine=334
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
@@ -588,12 +588,12 @@ TextFolding=[]
 ViMarks=
 
 [view-settings,view=0,item:Synopsis/content.tex]
-CursorColumn=20
-CursorLine=29
+CursorColumn=0
+CursorLine=32
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,29,20,[,29,20,],29,20
+ViMarks=.,30,0,[,30,0,],30,0
 
 [view-settings,view=0,item:Synopsis/setup.tex]
 CursorColumn=23
@@ -636,8 +636,8 @@ TextFolding=[]
 ViMarks=.,17,0,[,16,0,],17,11
 
 [view-settings,view=0,item:biblio/external.bib]
-CursorColumn=24
-CursorLine=4120
+CursorColumn=21
+CursorLine=2690
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
@@ -653,7 +653,7 @@ ViMarks=.,0,0,[,0,0,],0,0
 
 [view-settings,view=0,item:common/characteristic.tex]
 CursorColumn=0
-CursorLine=146
+CursorLine=41
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
