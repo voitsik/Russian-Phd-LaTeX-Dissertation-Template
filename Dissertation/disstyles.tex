@@ -70,11 +70,11 @@
     \renewcommand\cftsectionaftersnum{.\space}       % добавляет точку с пробелом после номера подраздела в оглавлении
     \renewcommand\cftsubsectionaftersnum{.\space}    % добавляет точку с пробелом после номера подподраздела в оглавлении
     \renewcommand\cftsubsubsectionaftersnum{.\space} % добавляет точку с пробелом после номера подподподраздела в оглавлении
-    \AtBeginDocument{% без этого polyglossia сама всё переопределяет
+    \AfterEndPreamble{% без этого polyglossia сама всё переопределяет
         \setsecnumformat{\csname the#1\endcsname.\space}
     }
 }{%
-    \AtBeginDocument{% без этого polyglossia сама всё переопределяет
+    \AfterEndPreamble{% без этого polyglossia сама всё переопределяет
         \setsecnumformat{\csname the#1\endcsname\quad}
     }
 }
@@ -192,32 +192,11 @@
     \counterwithout{table}{chapter}    % Убираем связанность номера таблицы с номером главы/раздела
 }{}
 
-
-%%http://www.linux.org.ru/forum/general/6993203#comment-6994589 (используется totcount)
-\makeatletter
-\def\formbytotal#1#2#3#4#5{%
-    \newcount\@c
-    \@c\totvalue{#1}\relax
-    \newcount\@last
-    \newcount\@pnul
-    \@last\@c\relax
-    \divide\@last 10
-    \@pnul\@last\relax
-    \divide\@pnul 10
-    \multiply\@pnul-10
-    \advance\@pnul\@last
-    \multiply\@last-10
-    \advance\@last\@c
-    \total{#1}~#2%
-    \ifnum\@pnul=1#5\else%
-    \ifcase\@last#5\or#3\or#4\or#4\or#4\else#5\fi
-    \fi
-}
-\makeatother
-
 \AtBeginDocument{
 %% регистрируем счётчики в системе totcounter
     \regtotcounter{totalcount@figure}
     \regtotcounter{totalcount@table}       % Если иным способом поставить в преамбуле то ошибка в числе таблиц
     \regtotcounter{TotPages}               % Если иным способом поставить в преамбуле то ошибка в числе страниц
+    \newtotcounter{totalappendix}
+    \newtotcounter{totalchapter}
 }
