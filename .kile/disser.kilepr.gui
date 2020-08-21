@@ -2,7 +2,7 @@
 kile_livePreviewEnabled=true
 kile_livePreviewStatusUserSpecified=true
 kile_livePreviewTool=LivePreview-XeLaTeX
-lastDocument=Dissertation/part3.tex
+lastDocument=common/references.tex
 
 [document-settings,item:Dissertation/acronyms.tex]
 Bookmarks=
@@ -420,8 +420,8 @@ open=true
 order=15
 
 [item:common/characteristic.tex]
-open=false
-order=4
+open=true
+order=6
 
 [item:common/concl.tex]
 open=false
@@ -444,8 +444,8 @@ open=false
 order=5
 
 [item:common/references.tex]
-open=false
-order=7
+open=true
+order=8
 
 [item:common/renames.tex]
 open=false
@@ -468,8 +468,8 @@ open=false
 order=6
 
 [item:synopsis.tex]
-open=false
-order=12
+open=true
+order=7
 
 [view-settings,view=0,item:Dissertation/acronyms.tex]
 CursorColumn=0
@@ -589,7 +589,7 @@ ViMarks=
 
 [view-settings,view=0,item:Synopsis/content.tex]
 CursorColumn=0
-CursorLine=32
+CursorLine=39
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
