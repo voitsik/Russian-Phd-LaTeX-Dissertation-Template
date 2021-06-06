@@ -64,6 +64,9 @@
 
 %%% Кодировки и шрифты %%%
 \ifxetexorluatex
+    \ifpresentation
+        \providecommand*\autodot{} % quick fix for polyglossia 1.50
+    \fi
     \PassOptionsToPackage{no-math}{fontspec}    % https://tex.stackexchange.com/a/26295/104425
     \usepackage{polyglossia}[2014/05/21]        % Поддержка многоязычности
                                         % (fontspec подгружается автоматически)
@@ -100,28 +103,11 @@
 \fi
 
 %%% Оформление абзацев %%%
-\providebool{newpoly} % polyglossia with indentfirst setting
-\boolfalse{newpoly} % setting our new boolean flag to default false
-\ifxetexorluatex
-    \makeatletter
-    \@ifpackagelater{polyglossia}{2019/11/15}{
-        \booltrue{newpoly} % setting our new boolean flag to true
-    }{}
-    \makeatother
-\fi
 \ifpresentation
 \else
     \indentafterchapter     % Красная строка после заголовков типа chapter
-    \ifxetexorluatex
-        \ifnewpoly
-        \else
-            \usepackage{indentfirst}
-        \fi
-    \else
-        \usepackage{indentfirst}
-    \fi
+    \usepackage{indentfirst}
 \fi
-
 
 %%% Цвета %%%
 \ifpresentation
@@ -156,6 +142,9 @@
 }{}
 
 %%% Гиперссылки %%%
+\ifxetexorluatex
+    \let\CYRDZE\relax
+\fi
 \usepackage{hyperref}[2012/11/06]
 
 %%% Изображения %%%
@@ -164,6 +153,7 @@
 \usepackage{subcaption}             % Подписи подрисунков и подтаблиц
 
 %%% Счётчики %%%
+\usepackage{aliascnt}
 \usepackage[figure,table]{totalcount}   % Счётчик рисунков и таблиц
 \usepackage{totcount}   % Пакет создания счётчиков на основе последнего номера
                         % подсчитываемого элемента (может требовать дважды
